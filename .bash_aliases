@@ -1,0 +1,6 @@
+alias :q='exit'
+alias slideshow='feh -D2 -FZz ' 
+alias imgview='feh -g 1200x800 -.rZ'
+alias ytmp3='youtube-dl -x --audio-format mp3 '
+alias wall='feh --bg-max' 
+alias filedate='date +%Y%m%d%H%M%S'

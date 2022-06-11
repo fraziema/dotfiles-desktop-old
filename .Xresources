@@ -1,0 +1,23 @@
+XTerm*Foreground: yellow
+XTerm*Background: black
+XTerm*renderFont: true
+XTerm*faceName: "Bitstream Vera Sans Mono"
+XTerm*faceSize: 16
+XTerm*visualBell: false
+
+Rxvt*faceName: "Bitstream Vera Sans Mono"
+Rxvt*faceSize: 16
+Rxvt*foreground: #FFCC00
+Rxvt*background: black
+
+Rxvt*visualBell: false
+Rxvt*scrollBar: false
+Rxvt*transparent:        true
+Rxvt*shading: 35
+!Rxvt*hold:		true
+
+URxvt*inheritPixmap: true
+URxvt*tintColor: white
+URxvt*shading: 10
+URxvt*transparent:        true
+

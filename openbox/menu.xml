@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="Terminal emulator">
+    <action name="Execute"><execute>x-terminal-emulator</execute></action>
+  </item>
+  <item label="Web browser">
+    <action name="Execute"><execute>firefox -P</execute></action>
+  </item>
+  <item label="File browser">
+	  <action name="Execute"><execute>nemo</execute></action>
+  </item>
+  <separator />
+  <item label="Run Program...">
+	  <action name="Execute"><execute>gmrun</execute></action>
+  </item>
+  <item label="On-Screen Keyboard">
+	  <action name="Execute"><execute>xvkbd</execute></action>
+  </item>
+  <item label="htop">
+	  <action name="Execute"><execute>xterm -e "htop"</execute></action>
+  </item>
+  <!-- This requires the presence of the 'obamenu' package to work -->
+  <!--
+  <menu id="/Debian" />
+	   -->
+  <separator />
+     <menu id="applications-menu" label="Applications" execute="openbox-menu gnome-applications.menu"/>
+   <separator />
+   <menu id="client-list-menu" />
+		   <separator />
+  <item label="Reconfigure">
+    <action name="Reconfigure" />
+  </item>
+  <item label="Restart">
+    <action name="Restart" />
+  </item>
+  <item label="xkill">
+	  <action name="Execute"><execute>xkill</execute></action>
+  </item>
+  <menu id="pretty_stuff_config" label="Config">
+   <item label="ObConf">
+    <action name="Execute"><execute>obconf</execute></action>
+  </item>
+   <item label="fbpanel">
+    <action name="Execute"><execute>fbpanel</execute></action>
+  </item>
+   <item label="Conky Restart">
+	   <action name="Execute"><execute>~/.config/openbox/conky-reset</execute></action>
+  </item>
+  </menu>
+  <menu id="pwr_mgt" label="Suspend">
+  <item label="Suspend">
+<action name="Execute"> <execute>xterm -e "sudo pm-suspend"</execute> </action> </item>
+<item label="Hibernate">
+<action name="Execute"> <execute>xterm -e "sudo pm-hibernate"</execute> </action> </item>
+  </menu>
+
+  <separator />
+  <item label="Exit">
+    <action name="Exit" />
+  </item>
+</menu>
+
+</openbox_menu>

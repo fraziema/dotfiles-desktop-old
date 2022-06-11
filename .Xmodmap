@@ -1,0 +1,17 @@
+! No Caps Lock
+clear lock
+! Caps Lock as Win key
+!add mod4 = Caps_Lock
+keycode 77 = Num_Lock
+
+! Swap caps lock and escape
+remove Lock = Caps_Lock
+remove Control = Control_R
+
+keysym Control_R = Escape
+keysym Escape = Control_L
+keysym Caps_Lock = Escape
+
+add Lock = Caps_Lock
+add Control = Control_L
+add Control = Escape

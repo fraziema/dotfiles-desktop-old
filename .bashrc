@@ -103,6 +103,7 @@ fi
 
 # User includes: whatever sort of dumb thing from 2005 did i get into
 # . ~/.bash_prompt
+export TERM=xterm-256color
 export PATH=$PATH:~/bin
 if [ -f ~/.bash_functions ]; then
 	. ~/.bash_functions

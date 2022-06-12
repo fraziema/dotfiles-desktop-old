@@ -49,6 +49,8 @@ nnoremap <leader><TAB> :call ToggleNumber()<CR>
 nmap <leader>i i<CR><Esc>
 nmap <leader>j J
 
+nnoremap <F2> i<CR><ESC>k:r!date +\%Y-\%b-\%d<CR><ESC>kJJ<ESC>
+
     " edit vimrc/zshrc and load vimrc bindings
     nnoremap <leader>ev :vsp $MYVIMRC<CR>
     nnoremap <leader>eb :vsp ~/.bashrc<CR>

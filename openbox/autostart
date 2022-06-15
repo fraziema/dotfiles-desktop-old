@@ -15,6 +15,6 @@ sleep 1 && xmodmap ~/.Xmodmap &
 sleep 1 && fbpanel & 
 sleep 1 && nm-applet & 
 sleep 1 && ~/.fehbg &
-sleep 1 && conky -d & 
-sleep 1 && xscreensaver -no-splash
+sleep 5 && conky -d & 
+sleep 10 && xscreensaver -no-splash
 

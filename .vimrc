@@ -6,12 +6,12 @@ set background=dark
 colorscheme breezy
 syntax enable
 
-" set tabs to 4 spaces, and actually use spaces 
+" set tabs to 2 spaces, and actually use spaces 
 " instead of tabs (expandtab)
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 
 " set what the file and interface look like
 set number      " line numbers 
@@ -24,6 +24,7 @@ set laststatus=2    " turn on statusline; turn off with 0
 
 " set search and find settings:
 set incsearch 
+set nohlsearch
 "set path+=**
 
 " set file browsing
@@ -49,7 +50,7 @@ nnoremap <leader><TAB> :call ToggleNumber()<CR>
 nmap <leader>i i<CR><Esc>
 nmap <leader>j J
 
-nnoremap <F2> i<CR><ESC>k:r!date +\%Y-\%b-\%d<CR><ESC>kJJ<ESC>
+nnoremap <F2> i<CR><ESC>k:r!date +\%Y-\%b-\%d<CR><ESC>kJxJx<ESC>
 
     " edit vimrc/zshrc and load vimrc bindings
     nnoremap <leader>ev :vsp $MYVIMRC<CR>

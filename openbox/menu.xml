@@ -43,6 +43,9 @@
   <item label="xkill">
 	  <action name="Execute"><execute>xkill</execute></action>
   </item>
+  <item label="Select Screenshot">
+	  <action name="Execute"><execute>scrot -s</execute></action>
+  </item>
   <menu id="pretty_stuff_config" label="Config">
    <item label="ObConf">
     <action name="Execute"><execute>obconf</execute></action>

@@ -40,22 +40,6 @@ set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
 nnoremap <space> za
 
-" new key mappings 
-let mapleader="\\"       " leader is backspace
-
-nnoremap <leader><TAB> :call ToggleNumber()<CR>
-
-" split and join lines using leader
-nmap <leader>i i<CR><Esc>
-nmap <leader>j J
-
-    " edit vimrc/bashrc and load vimrc bindings
-    nnoremap <leader>ev :vsp $MYVIMRC<CR>
-    nnoremap <leader>eb :vsp ~/.bashrc<CR>
-    nnoremap <leader>sv :source $MYVIMRC<CR>
-
-inoremap <F4> $ $<ESC>hi
-inoremap <F6> $$ $$<ESC>2hi
 
 " backup settings
 set backup
@@ -72,6 +56,11 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
+
+" new key mappings 
+let mapleader="\\"       " leader is backspace
+nnoremap <leader><TAB> :call ToggleNumber()<CR>
+source ~/.vim/keymaps.vim
 
 " vim-tex settings
 "let g:vimtex_view_method = 'zathura'

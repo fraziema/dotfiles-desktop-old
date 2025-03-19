@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "\documentclass{article}" > scr.tex
+echo "\usepackage{graphicx}" >> scr.tex
+echo "\begin{document} " >> scr.tex
+
+for i in `ls *.eps` ; do 
+	echo "\begin{figure}[htb]" >> scr.tex;
+	echo "\begin{center}" >> scr.tex;
+	
+	echo "\includegraphics[scale=0.75]{$i}" >> scr.tex ; 
+
+	echo "\end{center}" >> scr.tex;
+	echo "\end{figure}" >> scr.tex;
+done
+echo "\end{document}" >> scr.tex
+
+latex scr.tex && dvips scr.dvi && dvipdf scr.dvi
+
+

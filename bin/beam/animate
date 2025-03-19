@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd $1
+for j in * ; do
+
+cd $j; for i in *.png ; do 
+	convert $i $i.gif; 
+done
+
+convert -loop 0 *.gif $2$j.gif 
+cp $2$j.gif ../
+rm *.gif
+cd -
+
+echo $j
+done;

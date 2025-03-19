@@ -1,0 +1,22 @@
+#!/usr/bin/python
+from sys import argv
+
+def mult(a,b):
+    c,d = str(a),str(b)
+    p,q = len(c),len(d)
+    r = p+q
+    x = [int(c[z]) for z in reversed(range(p))]
+    y = [int(d[z]) for z in reversed(range(q))]
+    res = [0 for z in range(r)]
+    for i in (range(p)):
+        for j in (range(q)):
+            res[i+j] += x[i]*y[j]
+    for i in range(r-1):
+            res[i+1] += (res[i] // 10)
+            res[i] = res[i] % 10
+    return res
+        
+ans = reduce(lambda x,y:10*x+y, a)
+print ans
+print b
+            

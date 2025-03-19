@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+montage -label '%f' -geometry ${2:-400x300} *$1* demo-$1.png

@@ -1,0 +1,17 @@
+from user rayfil:
+Starting from scratch, the answer can be generated in less than 0.001 second in assembly and probably in other HLL languages. Loading a precalculated table of primes would make it even faster.
+
+a) Build the array of primes and keep their sum as it is built; stop when the sum would exceed 1,000,000. (If that last sum would be prime, it would be the ultimate answer; but it is not.)
+
+b) Reduce the number of primes in the sum by 1, first by subtracting the lowest prime (L), then by subtracting the highest prime (H) and check each result for prime.
+
+Then reduce the number of primes in the sum by 2 (2L, 1L1H, 2H).
+Then by 3 (3L, 2L1H, 1L2H, 3H). And so on until the modified sum is prime = answer.
+
+from user zvrba:
+/*
+    If we start with 2, there are 536 addends. 10000*100 equals a
+    million, so no prime >= 10000 can start a sum with more than 100
+    addends so that the sum is < million.
+  */
+

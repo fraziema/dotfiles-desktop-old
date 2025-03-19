@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+from modeuler import isprime
+
+found = 0
+num = 7
+while not found:
+    num += 2
+    if isprime(num): continue
+    sq = (2*x*x for x in xrange(1,num))
+    for i in sq:
+        k = num - i
+        if k < 0 : continue 
+        if isprime(k): break
+    else:
+        found = 1
+        print num
+

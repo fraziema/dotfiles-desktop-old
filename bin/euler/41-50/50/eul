@@ -1,0 +1,28 @@
+#!/usr/bin/python
+
+from modeuler import primes
+
+lim = 1000000
+L = [x for x in primes(lim)]
+M = [0 for x in range(lim)]
+bestk = 1
+
+print len(L)
+for p in xrange(5):#len(L)): # This is -slow- but seems to catch the max prime very early.
+    if L[p] > L[-1]/bestk : break # this is sim to suggestion that 100 cons primes must all be < 10000 to ass to less than 1M
+    sum = 0
+    k = 1
+    while sum < lim:
+        sum += L[p+k-1]
+        if sum in L:
+            M[sum] = max(M[sum],k) # sum up primes, check if prime, store num of terms in M
+        k+=1
+    bestk = max(M) # return the best-found length of primes so far
+    print p,bestk
+print M.index(max(M)), max(M)
+
+
+     
+
+        
+

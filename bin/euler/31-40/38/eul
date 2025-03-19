@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+from sys import argv
+from modeuler import digits, resum
+
+def dupes(lst): return ((len(lst) -len(set(lst))))
+
+def zero(lst): return ((0 in lst))
+
+answer=[]
+for ii in (digits(x) for x in xrange(10000,1,-1)):
+    if dupes(ii) or zero(ii) : continue
+    k = 2
+    n = resum(ii)
+    jj = []+ii
+    while len(jj) < 9:
+        jj = jj + digits(n * k)
+        if dupes(jj) or zero(jj): break
+        k += 1
+    if zero(jj) or len(jj)>9 or dupes(jj): continue
+    print '{0:5} => {1:10}'.format(n, resum(jj))
+    answer.append(resum(jj))
+
+    

@@ -1,0 +1,6 @@
+prob can be done in interpreter: to be evenly divisible by n, it must be divisible by primes < n (which covers multiplication of primes) and by powers of primes < n
+
+    for n=20, div is 2,3,5,7,11,13,17,19, 4=2^2, 8=2^3, 9=3^2, 16=2^4
+
+    2*2*2*2*3*3*5*7*11*13*17*19 = 232792560
+

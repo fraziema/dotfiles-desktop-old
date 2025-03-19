@@ -1,0 +1,331 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     10893,        321]
+NotebookOptionsPosition[      9713,        275]
+NotebookOutlinePosition[     10047,        290]
+CellTagsIndexPosition[     10004,        287]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Save: 6 Sides
+  Attacker loses 0.85 armies per defending army lost.\
+\>", "Subsection",
+ CellChangeTimes->{{3.436117599281352*^9, 3.436117605270338*^9}, {
+  3.4361177511895247`*^9, 3.436117754429338*^9}, {3.436117898186172*^9, 
+  3.436117898294935*^9}, {3.436118008582438*^9, 3.436118078462455*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Input", "Subsubsection",
+ CellChangeTimes->{{3.436117094958438*^9, 3.4361170953951387`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Sides", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Bonus", " ", "=", "0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.436116952925844*^9, 3.436116957069631*^9}, 
+   3.436117657534109*^9, {3.436117745621337*^9, 3.436117745822053*^9}, {
+   3.4361179031376877`*^9, 3.43611790321596*^9}, {3.4361180310989227`*^9, 
+   3.4361180601234426`*^9}, {3.437859881976867*^9, 3.437859888852527*^9}, 
+   3.437859991096912*^9, 3.437860064425594*^9, 3.437860111246759*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculation", "Subsubsection",
+ CellChangeTimes->{{3.436117098816729*^9, 3.436117100049645*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ZeroWin", "=", "0"}], ";", 
+  RowBox[{"OneWin", "=", "0"}], ";", 
+  RowBox[{"TwoWin", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"d1", "=", "1"}], ",", 
+   RowBox[{"d1", "\[LessEqual]", "Sides"}], ",", 
+   RowBox[{"d1", "++"}], ",", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"d2", "=", "1"}], ",", 
+      RowBox[{"d2", "\[LessEqual]", "Sides"}], ",", 
+      RowBox[{"d2", "++"}], ",", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"a1", "=", "1"}], ",", 
+         RowBox[{"a1", "\[LessEqual]", "Sides"}], ",", 
+         RowBox[{"a1", "++"}], ",", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"a2", "=", "1"}], ",", 
+            RowBox[{"a2", "\[LessEqual]", "Sides"}], ",", 
+            RowBox[{"a2", "++"}], ",", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{"For", "[", 
+              RowBox[{
+               RowBox[{"a3", "=", "1"}], ",", 
+               RowBox[{"a3", "\[LessEqual]", "Sides"}], ",", 
+               RowBox[{"a3", "++"}], ",", 
+               RowBox[{"{", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"Defense", "=", 
+                  RowBox[{"Sort", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"d1", ",", "d2"}], "}"}], ",", "Greater"}], 
+                   "]"}]}], ";", "\[IndentingNewLine]", 
+                 RowBox[{"Offense", "=", 
+                  RowBox[{"Sort", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"a1", ",", "a2", ",", "a3"}], "}"}], ",", 
+                    "Greater"}], "]"}]}], ";", "\[IndentingNewLine]", 
+                 RowBox[{"wins", "=", "0"}], ";", "\[IndentingNewLine]", 
+                 RowBox[{"For", "[", 
+                  RowBox[{
+                   RowBox[{"i", "=", "1"}], ",", 
+                   RowBox[{"i", "\[LessEqual]", "2"}], ",", 
+                   RowBox[{"i", "++"}], ",", 
+                   RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Offense", "[", 
+                    RowBox[{"[", "i", "]"}], "]"}], ">", 
+                    RowBox[{
+                    RowBox[{"Defense", "[", 
+                    RowBox[{"[", "i", "]"}], "]"}], " ", "+", " ", 
+                    "Bonus"}]}], ",", 
+                    RowBox[{"wins", "++"}], ",", "0"}], "]"}], ";"}], 
+                    "\[IndentingNewLine]", "}"}]}], "]"}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Switch", "[", 
+                  RowBox[{"wins", ",", "2", ",", 
+                   RowBox[{"TwoWin", "++"}], ",", "1", ",", 
+                   RowBox[{"OneWin", "++"}], ",", "0", ",", 
+                   RowBox[{"ZeroWin", "++"}]}], "]"}]}], 
+                "\[IndentingNewLine]", "}"}]}], "]"}], "\[IndentingNewLine]", 
+             "}"}]}], "]"}], "\[IndentingNewLine]", "}"}]}], "]"}], 
+       "\[IndentingNewLine]", "}"}]}], "]"}], "\[IndentingNewLine]", "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TwoWinProb", "=", 
+   FractionBox["TwoWin", 
+    SuperscriptBox["Sides", "5"]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"OneWinProb", "=", 
+   FractionBox["OneWin", 
+    SuperscriptBox["Sides", "5"]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ZeroWinProb", "=", 
+   FractionBox["ZeroWin", 
+    SuperscriptBox["Sides", "5"]]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.436117024348524*^9, 3.4361170854436703`*^9}, {
+  3.437859874739758*^9, 3.437859878386706*^9}, {3.437859959090803*^9, 
+  3.437859963979089*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Output\[LineSeparator]", "Subsubsection",
+ CellChangeTimes->{{3.436117106051998*^9, 3.4361171066897373`*^9}, 
+   3.437860072700042*^9}],
+
+Cell["Probability of {2,1,0} wins", "Text",
+ CellChangeTimes->{{3.4361170000807*^9, 3.436117009862688*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"TwoWinProb", ",", "OneWinProb", ",", "ZeroWinProb"}], "}"}], "//",
+   "N"}]], "Input",
+ CellChangeTimes->{{3.436117011907976*^9, 3.4361170175838633`*^9}, {
+  3.4361171104509287`*^9, 3.436117155084775*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.6193415637860082`", ",", "0.25475823045267487`", ",", 
+   "0.12590020576131689`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.436117137129209*^9, 3.436117155392356*^9}, 
+   3.43611767962111*^9, 3.436117863100348*^9, 3.436117909843362*^9, 
+   3.436118035657668*^9, 3.4361180670975857`*^9, {3.437859912658157*^9, 
+   3.437859938207121*^9}, {3.43785997193325*^9, 3.437859995457608*^9}, 
+   3.437860076343317*^9}]
+}, Open  ]],
+
+Cell["On average, Attacker loses this many per roll", "Text",
+ CellChangeTimes->{{3.436117166298403*^9, 3.436117184140745*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["OneWin", 
+    SuperscriptBox["Sides", "5"]], "+", 
+   RowBox[{"2", " ", 
+    FractionBox["ZeroWin", 
+     SuperscriptBox["Sides", "5"]]}]}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.436117186894981*^9, 3.43611718723003*^9}}],
+
+Cell[BoxData["0.5065586419753086`"], "Output",
+ CellChangeTimes->{
+  3.436117187613027*^9, 3.4361176796733437`*^9, 3.436117863139761*^9, 
+   3.436117909895646*^9, 3.436118035711038*^9, 3.436118067147173*^9, {
+   3.437859912751269*^9, 3.437859938481775*^9}, {3.437859972042699*^9, 
+   3.437859995566382*^9}, 3.437860079357758*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "More importantly, Attacker loses this many armies ",
+ StyleBox["per defending army lost",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.436117192029677*^9, 3.4361172314633503`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    FractionBox["OneWin", 
+     SuperscriptBox["Sides", "5"]], "+", 
+    RowBox[{"2", " ", 
+     FractionBox["ZeroWin", 
+      SuperscriptBox["Sides", "5"]]}]}], 
+   RowBox[{
+    RowBox[{"2", " ", 
+     FractionBox["TwoWin", 
+      SuperscriptBox["Sides", "5"]]}], "+", 
+    FractionBox["OneWin", 
+     SuperscriptBox["Sides", "5"]]}]], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4361172434990177`*^9, 3.436117248208334*^9}}],
+
+Cell[BoxData["0.3391888400929992`"], "Output",
+ CellChangeTimes->{
+  3.436117248540605*^9, 3.436117679724255*^9, 3.436117863189624*^9, 
+   3.436117909962689*^9, 3.436118035760469*^9, 3.436118067214519*^9, {
+   3.437859913848966*^9, 3.437859938637865*^9}, {3.437859972295619*^9, 
+   3.43785999580125*^9}, {3.437860082471049*^9, 3.437860087301476*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "And this is how many armies the Defender loses ",
+ StyleBox["per attacking army lost.",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.43611725898335*^9, 3.436117264414896*^9}, {
+  3.436117430581891*^9, 3.436117447037703*^9}, {3.436117507976536*^9, 
+  3.436117530951532*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"2", " ", 
+     FractionBox["TwoWin", 
+      SuperscriptBox["Sides", "5"]]}], "+", 
+    FractionBox["OneWin", 
+     SuperscriptBox["Sides", "5"]]}], 
+   RowBox[{
+    FractionBox["OneWin", 
+     SuperscriptBox["Sides", "5"]], "+", 
+    RowBox[{"2", " ", 
+     FractionBox["ZeroWin", 
+      SuperscriptBox["Sides", "5"]]}]}]], "]"}]], "Input",
+ CellChangeTimes->{{3.4361174828258467`*^9, 3.436117482881268*^9}, 
+   3.436117545790311*^9}],
+
+Cell[BoxData["2.9482102056359483`"], "Output",
+ CellChangeTimes->{
+  3.4361174861466303`*^9, 3.436117547407427*^9, 3.436117679772257*^9, 
+   3.436117863239006*^9, 3.436117910027369*^9, 3.436118035810001*^9, 
+   3.436118067263373*^9, {3.437859914953213*^9, 3.437859938783361*^9}, {
+   3.437859972483647*^9, 3.437859996077413*^9}, 3.437860094271742*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{640, 603},
+WindowMargins->{{171, Automatic}, {Automatic, 59}},
+FrontEndVersion->"6.0 for Linux x86 (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 309, 6, 59, "Subsection"],
+Cell[CellGroupData[{
+Cell[924, 33, 98, 1, 30, "Subsubsection"],
+Cell[1025, 36, 509, 9, 55, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1571, 50, 102, 1, 30, "Subsubsection"],
+Cell[1676, 53, 3902, 91, 543, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5615, 149, 141, 2, 49, "Subsubsection"],
+Cell[5759, 153, 107, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[5891, 158, 257, 6, 32, "Input"],
+Cell[6151, 166, 452, 9, 31, "Output"]
+}, Open  ]],
+Cell[6618, 178, 127, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[6770, 183, 279, 8, 54, "Input"],
+Cell[7052, 193, 329, 5, 31, "Output"]
+}, Open  ]],
+Cell[7396, 201, 216, 6, 49, "Text"],
+Cell[CellGroupData[{
+Cell[7637, 211, 478, 15, 77, "Input"],
+Cell[8118, 228, 350, 5, 31, "Output"]
+}, Open  ]],
+Cell[8483, 236, 303, 7, 49, "Text"],
+Cell[CellGroupData[{
+Cell[8811, 247, 508, 16, 77, "Input"],
+Cell[9322, 265, 351, 5, 31, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

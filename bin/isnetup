@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+#sleep $(( 30 + ($RANDOM % 30) ))
+site=$(shuf -n 1 ~/bin/phosts)
+echo $site
+ping -4 -c 2 -w 5 -q $site 2>&1|\
+	tail -n 2 |\
+	head -n 1 |\
+	fmt -g 30
+

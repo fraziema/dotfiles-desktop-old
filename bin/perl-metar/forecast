@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+curl -s "https://forecast.weather.gov/MapClick.php?lat=$1&lon=$2&unit=0&lg=english&FcstType=text&TextType=1"  |\
+	   	html2text  |\
+		sed -e 's/Last_Update://' -e 's/\=//g' |\
+	   	tail -n +3  |\
+		sed -z -e 's/\n/##/g' -e 's/######/\n\n/' -e 's/####/\n\n/g' -e 's/##/ /g' |\
+ 	   	head -n 7  |\
+		fmt -g 30
+		

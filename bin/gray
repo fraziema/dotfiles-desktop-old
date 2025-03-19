@@ -1,0 +1,10 @@
+#!/bin/bash
+
+f() {
+  echo $1 | tr ' ' '\n' | sed 's/^/0/'
+  echo $1 | tr ' ' '\n' | tac | sed 's/^/1/'
+}
+
+a=
+for i in $(seq $1); do a=$(f "$a"); done
+echo $a

@@ -1,0 +1,26 @@
+#!/usr/bin/python
+
+from modeuler import isprime,digits
+
+def dupes(lst): return len(lst) - len(set(lst))
+def zero(lst): return ((0 in lst))
+
+test = [1,2,3,4,5,6,7] # 8d nd 9d pandigital #s will divide by 3
+lt = len(test)
+ans = 2
+for k in xrange(7654321,1,-2):
+    p = digits(k)
+    if dupes(p) or zero(p) : continue
+    if set(test) - set(p) == set([]) and isprime(k):
+        ans = k
+        print ans
+        break # since we're starting at the top, the first is largest
+    q = len(p)
+    if q < lt: 
+        test.append(q)
+        lt = len(test)
+
+    
+
+    
+

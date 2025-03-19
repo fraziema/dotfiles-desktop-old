@@ -1,0 +1,156 @@
+#!/usr/bin/perl
+
+#
+# Script to download METAR data from noaa.gov and make it readable
+#
+# Current as of 29 APR 2008
+#
+
+
+# Check argument(s)
+$C1 = $ARGV[0];
+$C2 = $ARGV[1];
+die ("Needs METAR Callsign as argument. Exiting") unless $C1;
+
+# Download METAR Report and Strip HTML / '\n'
+$command = "curl -s -o $C1.metar https://aviationweather.gov/api/data/metar?ids=$C1&hours=0&order=id%2C-obs&sep=true";
+
+$file = system($command) unless $C2;
+sleep 2;
+# Open file 
+open(F, "<$C1.metar") or die("Cannot open file, argument exists. Confirm connection to weather.noaa.gov. Exiting");
+
+#####
+#
+# The input needs to be sorted scalar by scalar and regex'ed 
+# with the possibal METAR things: This will be hard. Perhaps 
+# we should only care about temperature, wind, and precipitation
+# and ignore visibility and wind variability (perhaps, look at
+#
+#	The solution might be to find a string that only appears in 
+#	readings of each type (V, VRB, SM, Z, etc and sort them by 
+#	those categories
+#	
+#####
+
+# Slurp file and make array of METAR data
+$file = <F>;
+@list = split(/ /,$file);
+
+close(F);
+#foreach  (@list) { print $_ . "\n";}; 
+
+# Sort array into useful data
+%d = ();
+$d{station} = ($list[0] =~ /METAR/?$list[1]:$list[0]) ;
+foreach (@list) {
+	next if ($_ =~ /AUTO/);
+	next if ($_ eq $d{station});
+	last if ($_ =~ /RMK/);
+	#time
+	$d{utc} = substr($_,2,2) .':'.substr($_,4,2)." UTC" if ($_ =~ /Z/);
+	#wind
+	if ($_ =~ /KT/) {
+		$d{wdir} = (substr($_,3,2)=~/00/ ? "Calm" :substr($_,0,3));
+		$d{wspd} = (substr($_,3,2));
+		$d{wsmax} = (substr($_,6,2)) if ($_ =~ /G/);
+	}
+	#variable winds
+	$d{vw} = (($_ =~ /V[0-9]/)?"Variable":"");
+	#visibility
+	$d{sm} = substr($_,0,-2) if ($_ =~ /SM/);
+	#temperature and dew point
+	if ($_ =~ /\//) {
+		$d{tempc} = (substr($_,0,3) =~ /M/ ? '-' . substr($_,1,2) : substr($_,0,2)); 
+		$d{dpc} = (substr($_,-3,3) =~ /M/ ? '-':'') . substr($_,-2,2) ;
+	}
+	#Sky Cover
+	if (($_ =~ /[A-Z]{3}\d?/)  && ($_ !~ /RMK/)) {
+		if (($_ =~ /CLR/) || ($_ =~ /SKC/)) { push(@ceil, "Clear / Unlimited") }
+		elsif ($_ =~ /FEW/) {push(@ceil, "Few Clouds")}
+		elsif ($_ =~ /SCT/) {push(@ceil, "Scattered Clouds")}
+		elsif ($_ =~ /BKN/) {push(@ceil, "Broken Clouds")}
+		elsif ($_ =~ /OVC/) {push(@ceil, "Overcast")}
+		else {;} 
+		$d{ceilht} = substr($_,3,3);
+		$d{ceilht} .= "00 feet" if $d{ceilht};
+		$d{ceilht} =~ s/(0*(\d+))/$2/;
+		push(@ceil,$d{ceilht});
+	}
+	# Precipitation and weather phenomena
+	push(@wthpn, $_) if (($_ =~ /[+-]?[A-Z]{2,10}/) && ($_ !~ /\d/));
+	# Barometric Pressure
+	$d{inhg} = substr($_,1,2) . substr($_,3,2) if ($_ =~ /A\d\d\d\d/);
+}
+
+# Process Wind Data
+$d{nwd} = ( ($d{wdir} =~ /Calm/)? 16 : int((($d{wdir} + 11.25) % 360) / 22.5));
+%dir=(0,N,1,NNE,2,NE,3,ENE,4,E,5,ESE,6,SE,7,SSE,8,S,9,SSW,10,SW,11,WSW,12,W,13,WNW,14,NW,15,NNW,16,Calm);
+
+# Process precipitation / phenomena
+foreach (@wthpn) {
+	#eliminate non-weather
+	$_ =~ s/SKC//;
+	$_ =~ s/CLR//;
+
+	#Translate weather codes
+	# Intensity / Proximity
+	$_ =~ s/\-/light /;
+	$_ =~ s/\+/heavy /;
+	$_ =~ s/VC/in the vicinity, /;
+	# Descriptor
+	$_ =~ s/MI/shallow /;
+	$_ =~ s/PR/partial /;
+	$_ =~ s/BC/patches /;
+	$_ =~ s/DR/low drifting /;
+	$_ =~ s/BL/blowing /;
+	$_ =~ s/SH/showers /;
+	$_ =~ s/TS/thunderstorm /;
+	$_ =~ s/FZ/freezing /;
+	#Precipitation
+	$_ =~ s/DZ/drizzle /;
+	$_ =~ s/RA/rain /;
+	$_ =~ s/SN/snow /;
+	$_ =~ s/SG/snow grains /;
+	$_ =~ s/IC/ice crystals /;
+	$_ =~ s/PL/ice pellets /;
+	$_ =~ s/GR/hail /;
+	$_ =~ s/GS/small hail /;
+	$_ =~ s/UP/fish and oranges or unknown precipitation /;
+	# Obscuration
+	$_ =~ s/BR/mist /;
+	$_ =~ s/FG/fog /;
+	$_ =~ s/FU/smoke /;
+	$_ =~ s/VA/volcanic ash /;
+	$_ =~ s/DU/widespread dust /;
+	$_ =~ s/SA/sand /;
+	$_ =~ s/HZ/haze /;
+	$_ =~ s/PY/spray /;
+	# Other
+	$_ =~ s/PO/Dust \/ Sand Whirls/;
+	$_ =~ s/SQ/squalls/;
+	$_ =~ s/FC/Funnel Cloud /;
+	$_ =~ s/SS/sandstorm/;
+	$_ =~ s/DS/duststorm/;
+}
+$phenomena = join('| ',@wthpn); 
+
+$d{tempf} =int(($d{tempc}*(9/5) + 32));
+$d{dpf} = int(($d{dpc}*(9/5) + 32));
+$d{inhg} /= 100;
+
+
+print <<_END;
+
+Station $d{station} at $d{utc}
+Temperature: $d{tempc} C / $d{tempf} F	
+Dewpoint: $d{dpc} C / $d{dpf} F
+Wind $d{wspd} Knots from $dir{$d{nwd}} $d{vw}
+Pressure: $d{inhg} inHg
+Current Weather: $phenomena
+Visibility: $d{sm} miles
+@ceil
+
+_END
+
+

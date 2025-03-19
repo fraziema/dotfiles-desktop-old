@@ -3,7 +3,7 @@ set termguicolors
 set t_Co=256
 set background=dark
 "   colorscheme blackboard
-colorscheme blackboard
+colorscheme gruvbox
 syntax enable
 
 " set tabs to 4 spaces, and actually use spaces 
@@ -15,6 +15,7 @@ set shiftwidth=4
 
 " set what the file and interface look like
 set number      " line numbers 
+set relativenumber      " line numbers 
 set showmatch   " matching brackets are shown
 set ruler       
 set wildmenu    " visual autocomplete for command menu

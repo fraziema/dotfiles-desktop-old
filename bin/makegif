@@ -1,0 +1,6 @@
+mogrify -resize 20x20% -quality 90% -format jpg *
+#rm *.JPG
+convert *.jpg mov1.gif
+#-path ./ 
+ffmpeg -f gif -i mov1.gif  -c:v libx264 -c:a libfaac mov1.mp4
+

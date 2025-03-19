@@ -1,0 +1,18 @@
+# git ignore file for dotfiles
+
+# ssh related files
+.ssh/
+id_rsa*
+known_hosts
+
+# backup dotfiles
+dotfiles*
+
+# I don't know what they do rn
+.pki/
+_priv/
+
+# vim swap, backup, and netrw
+netrw*
+.vim/backup/
+.vim/swap/

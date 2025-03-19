@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+from modeuler import Digits
+
+a = Digits(43201)
+
+print a.res, a.z,a.dup,a.dig
+print a.zero(a.digits(99990))
+
+a.dig[-2] = 3
+a.update(a.dig)
+print
+print a.res, a.z,a.dup,a.dig
+
+print
+print a.res, a.z,a.dup,a.dig
+
+print
+print Digits.resum(a,a.dig)

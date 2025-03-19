@@ -1,0 +1,30 @@
+#!/usr/bin/python
+
+from modeuler import primes
+
+factors =   [[0],[1],[2],[3]] 
+
+found = 0
+num = 3
+while not found:
+    for _ in range(4):
+        num += 1
+        if not num % 1000 : print num
+        testnum = num
+        p = (z for z in primes(int(testnum**0.5)))
+        fac = []
+        for k in p:
+            if not testnum % k: 
+                fac.append(k)
+                testnum /= k
+                if testnum < len(factors):
+                    fac = fac + factors[testnum]
+                    factors.append(fac)
+                    break
+        else:
+            factors.append([num])
+        if len(set(factors[num])) < 4: break
+    else:
+        print [(num - x, set(factors[num-x])) for x in range(4)]
+        found = 1
+

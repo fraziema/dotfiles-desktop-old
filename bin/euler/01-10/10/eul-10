@@ -1,0 +1,17 @@
+#!/usr/bin/python
+from math import sqrt
+n=2000000
+last = int(sqrt(n))
+sp = [2,3]+ filter(lambda x: x % 3 != 0, range(3,last+1,2))
+def isprime(num):
+    for k in sp:
+        if num % k == 0 and num != k:
+           return 0
+    return 1
+y = 1
+sum=2
+while y < n:
+    y+=2
+    if isprime(y) == 1:
+        sum += y
+print sum

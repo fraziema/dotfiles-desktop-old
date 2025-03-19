@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/fraziema/attiny'
+let g:netrw_dirhist_4='/home/fraziema/.config/autostart'
 let g:netrw_dirhist_3='/home/fraziema'
 let g:netrw_dirhist_2='/home/fraziema/bin'
 let g:netrw_dirhist_1='/home/fraziema'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_9='/home/fraziema'
 let g:netrw_dirhist_8='/home/fraziema/.vim/swap'
 let g:netrw_dirhist_7='/home/fraziema/.vim/pack/bundle/start'
 let g:netrw_dirhist_6='/home/fraziema/.vim/pack/bundle'
-let g:netrw_dirhist_5='/home/fraziema/.vim/pack'
-let g:netrw_dirhist_4='/home/fraziema'

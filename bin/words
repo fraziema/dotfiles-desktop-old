@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ~/
+
+RANGE=`wc -l  .wordlist | awk ' {print $1;}'`
+N=$RANDOM
+let "N %= $RANGE"
+let "N += 1"
+head -n $N .wordlist | tail -n 1

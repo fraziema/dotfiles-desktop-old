@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+
+use Getopt::Long;
+use Term::ANSIColor;
+
+GetOptions(
+	"damage=s"	=> \$damage_string,
+	"add"				=> \$is_add,
+	"average"		=> \$is_average,
+	"help"			=> \$is_help
+);
+
+#-------------------------------------------------------------------------
+# $damage_string is expected to be a comma separated string of different dice
+# rolls. each die roll is itself expected to be a + separated string of values.
+# that is, 
+#   2d4+4d6+18,1d6+10,1d4+10
+# is the expected form of $damage_string.
+#
+#print "$damage_string\n";
+
+my $total = 0;
+my $damage = 0;
+my $average = 0;
+my @individual_damages = split(/,/,$damage_string);
+
+foreach (@individual_damages) {
+	print"Rolling $_\n ";
+	$damage = 0;
+	$average = 0;
+	my @rolls = split(/\+/);
+
+	foreach (@rolls) {
+		if (/\d+d\d+/) {
+			my @dice = split(/d/);
+				#print"@dice[1]-sided die @dice[0] times, followed by a\n ";
+			$average += @dice[0]*(@dice[1]+1)/2;
+			for ($i=1; $i<=@dice[0]; $i++) {
+				$damage += int(rand(@dice[1]))+1;
+			}
+		} else {
+				#print"and add $_ to the result.\n";
+			$average += $_;
+			$damage += $_;
+		}
+	}
+	print"The average roll is $average.\n ";
+	unless ($is_average){ 
+		print"The rolled result is ";
+		print color 'red';
+		print"$damage";
+		print color 'reset';
+		print".\n";
+	}
+	print"\n";
+	$total += ($is_average) ? $average : $damage;
+}
+if ($is_add) {
+	print"The total is ";
+	print color 'bold red';
+	print"$total";
+	print color 'reset';
+	print"\n" ;
+}

@@ -1,0 +1,20 @@
+Saying that a number contains 1000 digits is the same as
+saying that it's greater than 10**999.
+
+The nth Fibonacci number is [phi**n / sqrt(5)], where the
+brackets denote "nearest integer".
+
+So we need phi**n/sqrt(5) > 10**999
+
+n * log(phi) - log(5)/2 > 999 * log(10)
+
+n * log(phi) > 999 * log(10) + log(5)/2
+n > (999 * log(10) + log(5) / 2) / log(phi)
+
+A handheld calculator shows the right hand side to be
+4781.8593, so 4782 is the first integer n with the
+desired property.
+----------------------------------------------------
+
+python did handle F(4782) as a 1000-digit number (done in interpreter)
+used len(str(F())) to search by eye

@@ -1,0 +1,30 @@
+#!/usr/bin/python
+
+from sys import argv
+from modeuler import primes, isprime
+
+z = [1,3,7,9]
+ans = []
+p = primes(1000000)
+while len(ans) < 11:
+    ii = p.next()
+    if ii < 10: continue
+    k = ii
+    j = ii
+    while k > 10:
+        k //= 10
+        if not isprime(k): k = 0
+    if not isprime(k): continue 
+
+    q = 10**len(str(j))
+    while j > 10:
+        j %= q
+        if not isprime(j): 
+            j = 0
+            break
+        q /= 10
+    if isprime(j):
+        ans.append(ii)
+        print len(ans), '->', ii, sum(ans)
+
+    

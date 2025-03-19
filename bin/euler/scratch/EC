@@ -1,0 +1,116 @@
+#!/usr/bin/python
+def isprime(num):
+    if num <= 1: return 0           # 1, 0, negative integer not prime
+    if num < 4 : return 1           # 2,3 prime
+    if num % 2 == 0: return 0       # 4,6,8,... composite
+    if num < 9 : return 1           # 5,7 prime
+    if num % 3 == 0: return 0       # 9,12,15,... composite
+    last = int((num)**(0.5))+1
+    for k in range(5,last,6):      # all other primes == -1,1 mod 6
+        if num % k == 0: return 0   # (5),11,17,...
+        if num % (k+2) == 0: return 0   # (7),13,15,...
+    return 1
+
+def factor(num):
+    list=[]
+    y = num
+    k = 5
+    while y > 1:
+        while y % 2 == 0: 
+            y /= 2
+            list.append(2)
+        while y % 3 == 0: 
+            y /= 3
+            list.append(3)
+        while y % k == 0: 
+            y /= k
+            list.append(k)
+        while y % (k+2) == 0: 
+            y /= (k+2)
+            list.append((k+2))
+        k += 6
+    return sorted(list)
+
+def expm(x,y,m):
+    if y == 0: return 1
+    if y == 1: return x%m 
+    if y % 2: return x*expm((x*x)%m,(y-1)/2,m)%m 
+    return expm((x*x)%m,y/2,m)%m
+
+def root(x,num):
+    if expm(x,(num-1)/2,num) != 1 : raise ValueError('no root (not a residue)')
+    if num%4 == 3: return [expm(x,(num+1)/4,num),-expm(x,(num+1)/4,num)%num]
+    if num%8 == 5: 
+        v = expm(2*x,(num-5)/8,num)
+        i = 2*x*v*v % num
+        return [x*v*(i-1)%num, -x*v*(i-1)%num]
+    if num%8 == 1:
+        s = 0; q = num-1
+        while not q%2: s += 1; q /= 2
+        p = 2; z = 0; d = 1
+        while d == 1:
+            z = expm(p,q,num)
+            d = expm(z,2**(e-1),num)
+            p += 1
+        R = expm(x,(q+1)/2,num)
+        c = expm(z,q,num)
+        t = expm(x,q,num)
+        m = s
+        while True:
+            if t == 1: return [R % num,-R % num]
+            k = 0
+            while expm(t,2**k,num) != 1: k+= 1
+            b = expm(c,2**(m-k-1),num)
+            R = R*b
+            t = t*b*b
+            c = b*b
+            m = k
+
+print root(10,31)
+print
+print
+    
+
+def inv(x,num): 
+    g = (x+num)%num
+    if isprime(num): t = num-1
+    else:
+        f = (1 - 1/x for x in set(factor(num)))
+        t = num*reduce(lambda x,y:x*y,f)
+    return expm(g,t-1,num)
+
+
+
+def ecadd(P,Q,C): # P,Q 3-tuples, with [2] = 1 unless point at infinity
+    if 4*C[0]*C[0]*C[0] + 27*C[1]*C[1] == 0: raise ValueError('discriminant = 0')
+    # point at infinity is identity.
+    if P[2] == 0 : return Q
+    if Q[2] == 0 : return P 
+    # set slope (tangent if P==Q)
+    if P == Q: s = (3*P[0]*P[0] + C[0])*inv(2*P[1],C[2])%C[2]
+    else: s = (P[1]-Q[1])*inv(P[0]-Q[0],C[2])%C[2]
+    x = (s*s - P[0] - Q[0])%C[2]
+    y = (s*(P[0]-x)-P[1])%C[2]
+    return (x,y,1)
+
+
+Curve = (4,4,5)
+Point1 = (1,2,1)
+Point2 = (4,3,1)
+
+print Point1,Point2,Curve
+print ecadd(Point1,Point2,Curve)
+
+#lim = 1000001    
+#lim2 = 1234567    
+#lim3 = 6234567    
+#while not isprime(lim): lim += 2
+#while not isprime(lim2): lim2 += 2
+#while not isprime(lim3): lim3 += 2
+#
+#Curve = (lim,lim2,lim3)
+#Point1 = (345,pow((345**3+lim*345+lim2),int(lim2/2),lim3),1)
+#Point2 = (677,pow((677**3+lim*677+lim2),int(lim2/2),lim3),1)
+#print Point1,Point2,Curve
+#print ecadd(Point1,Point2,Curve)
+#

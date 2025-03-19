@@ -1,0 +1,5 @@
+#!/bin/bash
+
+fswebcam --no-banner -r 1280x960 test.jpg
+feh test.jpg
+rm test.jpg

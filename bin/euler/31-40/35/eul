@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+from sys import argv
+from modeuler import isprime, primes, digits, resum
+
+x = primes(1000000)
+ans = []
+for ii in x:
+    if ii in ans: continue
+    l = len(str(ii))
+    a = digits(ii)
+    b = [ (resum([ a[(x+y)%l] for y in range(l)])) for x in range(1,l) ]
+    if all(isprime(x) for x in b): ans=ans+[ii]+b
+print (ans), len(set(ans))

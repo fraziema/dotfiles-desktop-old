@@ -1,9 +1,22 @@
 #!/usr/bin/bash
 curl -s "https://forecast.weather.gov/MapClick.php?lat=$1&lon=$2&unit=0&lg=english&FcstType=text&TextType=1"  |\
 	   	html2text  |\
-		sed -e 's/Last_Update://' -e 's/\=//g' |\
+        grep -A 100 'Last_Update' |\
+		sed -e 's/\=//g' |\
 	   	tail -n +3  |\
-		sed -z -e 's/\n/##/g' -e 's/######/\n\n/' -e 's/####/\n\n/g' -e 's/##/ /g' |\
- 	   	head -n 7  |\
-		fmt -g 30
+#		sed -z -e 's/\n/##/g' -e 's/######/\n\n/' -e 's/####/\n\n/g' -e 's/##/ /g' |\
+        grep -B 100 'Elev'|\
+# 	   	head -n 5  |\
+#		fmt -g 30 |\
+        tee ~/.wtemp
+
+if [ `wc -l ~/.wtemp | awk '{print $1;}' ` -eq 0 ]
+then
+		echo "Cannot access weather.gov"
+		echo
+		#cat ~/.weather
+else
+		#mv ~/.wtemp ~/.weather
+		rm ~/.wtemp 
+fi
 		

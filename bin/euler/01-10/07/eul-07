@@ -1,0 +1,22 @@
+#!/usr/bin/python
+from math import sqrt
+
+primes = [2]
+
+def isprime(num, primes):
+    x = 1
+    last = int(sqrt(num))
+    for k in primes:
+        if num % k == 0:
+            x = 0
+            break
+        if k == last:
+            break
+    return x
+y = 1
+while len(primes) < 10**4 + 1:
+    y+=2
+    if y % 10 == 1: print "=>",y
+    if isprime(y, primes):
+        primes.append(y)
+print primes

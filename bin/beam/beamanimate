@@ -1,0 +1,31 @@
+#!/bin/bash
+
+cd $1
+echo   "\\documentclass{beamer}" >> $2.tex
+echo  "\\usepackage{animate}" >> $2.tex
+echo >> $2.tex
+echo  "\\begin{document}" >> $2.tex
+
+for j in `seq 1 8`; do
+cd png-$j
+c=0;
+mkdir bak;
+for i in *.png; do
+	let c=c+1
+	d=$2_$j_$c.png
+	cp $i bak/$i
+	mv $i $d
+done
+	e=$2_$j_
+	echo  "\\begin{frame}" >> ../$2.tex
+	echo  "\\animategraphics[loop, controls, width=0.8\textwidth]{5}{png-$j/$e}{1}{$c}" >> ../$2.tex
+	echo  "\\end{frame}" >> ../$2.tex
+
+	echo >> ../$2.tex
+cd ..
+done
+
+echo  "\\end{document}" >>$2.tex
+
+
+cd ..

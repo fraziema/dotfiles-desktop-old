@@ -1,0 +1,12 @@
+#!/bin/bash
+
+y=0
+z=`date +%d%h%Y`
+mkdir $z; cd $z;
+while [ $y -lt 1000 ]  ; do 
+	x=`date +%d%h%Y-%H%M%S`.jpg
+	fswebcam --no-banner -r 1280x960 $x
+	sleep 3
+	((y++)) 
+done
+cd -

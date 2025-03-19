@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+from sys import argv
+from modeuler import divisors as div
+
+MAX = 28123
+ints = range(MAX+1)
+abu = filter(lambda x:sum(div(x)) > x ,range(1,MAX+1))
+
+temp = []
+for x in range(len(abu)):
+    temp = [abu[x]+abu[y] for y in range(x+1)]
+#    print x
+    for y in temp:
+        try: # if y < len(abu) i think
+            ints[y]=0
+        except:
+            pass
+print sum(ints)
+    

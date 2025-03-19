@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo   "\\documentclass{beamer}" > $1
+echo  "\\usepackage{graphicx}" >> $1
+echo >> $1
+echo  "\\begin{document}" >> $1
+
+for i in *.png; do
+	echo  "\\begin{frame}" >> $1
+	echo  "\\includegraphics[width=0.95\\textwidth]{$i}" >>$1
+	echo  "\\end{frame}" >> $1
+
+	echo >> $1
+
+done
+
+echo  "\\end{document}" >>$1
+
+pdflatex $1
+	

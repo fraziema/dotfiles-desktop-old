@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+from sys import argv
+
+sq = [1]
+for ii in range(3,1002,2):
+    k = ii - 1
+    j = sq[-1]
+    sq = sq + [j+k, j+2*k, j+3*k, j+4*k]
+print sum(sq)
+

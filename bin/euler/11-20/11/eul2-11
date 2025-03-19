@@ -1,0 +1,11 @@
+#!/usr/bin/python
+from math import sqrt
+
+num = 2000000
+snum = int(sqrt(num))
+
+primes = [2]+ (range(3,num+1,2))
+for k in range(2,snum+1):
+    if k not in primes: continue
+    primes = filter(lambda x : x % k !=  0 or x == k, primes)
+print sum(primes)

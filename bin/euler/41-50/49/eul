@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+from modeuler import primes, isprime, digits
+
+lp = ( x for x in primes(10000) if x > 1000 )
+
+for k in lp: 
+    a = set(digits(k))
+    lp2 = ( x for x in primes(10000) if x > k )
+    for d in lp2:
+        if a != set(digits(d)): continue
+        f = k+(2*(d-k))
+        if isprime(f) and a == set(digits(f)): 
+            print k,d,f,d-k
+            
+        
+

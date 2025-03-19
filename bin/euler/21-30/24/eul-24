@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+from sys import argv
+# note: recursion is horrible for this i think
+def perm(l):
+    if len(l) == 2: 
+        return [[l[0],l[1]],[l[1],l[0]] ]
+    Z = []
+    QQ = []
+    for ii in range(len(l)):
+        X = l[ii]
+        Y = [x for x in l]
+        Y.remove(X)
+        Z = perm(Y)
+        for W in range(len(Z)):
+            Z[W].insert(0,X)
+        QQ = QQ + Z
+    return QQ
+
+m = (list(argv[1]))
+Q= perm(m)
+print ''.join(Q[0]),''.join( Q[int(argv[2])])

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+i=$( echo "$4 * $3" | bc )
+j=$( echo "$4 * $2" | bc )
+
+./damagev2 -d $j*1d$1+$i

@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+f = open('data','r')
+a=b=[]
+lines = 0
+for line in f:
+   b = (line.strip())
+   a.append(b)
+   lines += 1
+
+f.close()
+
+digsum = tot = 0
+ltot = 1
+digits = []
+indx = 10
+col = 0
+while indx >= 0:
+    ltot = tot
+    digsum =  sum([int(a[x][col]) for x in range(lines)])
+    tot += digsum * 10**indx
+    indx -= 1
+    col += 1
+    print '{0:2}  {1:,}'.format(col, tot)
+print str(tot)[0:10]

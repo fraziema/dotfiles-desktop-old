@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+address=$1
+
+curl -s "https://aviationweather.gov/api/data/metar?ids=KBCB&hours=0&order=id%2C-obs&sep=true" | html2text | head -n 26 | tail -n 13

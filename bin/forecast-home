@@ -1,11 +1,15 @@
 #!/usr/bin/bash
 curl -s "https://forecast.weather.gov/MapClick.php?lat=36.9087&lon=-80.8672&unit=0&lg=english&FcstType=text&TextType=1"  |\
 	   	html2text  |\
-		sed -e 's/Last_Update://' -e 's/\=//g' |\
+        grep -A 100 'Last_Update' |\
+		sed -e 's/\=//g' |\
 	   	tail -n +3  |\
+        sed '1d' |\
 		sed -z -e 's/\n/##/g' -e 's/######/\n\n/' -e 's/####/\n\n/g' -e 's/##/ /g' |\
- 	   	head -n 7  |\
-		fmt -g 30 | tee ~/.wtemp
+        grep -B 100 'Elev'|\
+ 	   	head -n 5  |\
+		fmt -g 30 |\
+        tee ~/.wtemp
 
 if [ `wc -l ~/.wtemp | awk '{print $1;}' ` -eq 0 ]
 then

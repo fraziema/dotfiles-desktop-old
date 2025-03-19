@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+f1 = False
+a,b= 999,999
+ans=[]
+for d in range(1,b+1):
+    for q in range(1,a+1):
+       x = '{:06}'.format(d*q)
+       y = x[:3]
+       z = x[:2:-1]
+       if y == z:
+           ans.append(x)
+           print x,y,z, '   ', d, q
+answer=sorted(ans)
+print answer.pop()

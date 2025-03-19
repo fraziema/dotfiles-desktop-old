@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+from sys import argv
+D = []
+X = [x**5 for x in range(10)]
+print range(10)
+print X
+for I in range(2,int(argv[1])):
+    Q = [int(x) for x in list(str(I))]
+    k = 0
+    for J in Q:
+        k += X[J]
+    if k == I: 
+        print I
+        D.append(I)
+print
+print D,sum(D)
+
+

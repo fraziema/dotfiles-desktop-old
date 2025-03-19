@@ -1,0 +1,10 @@
+#!/usr/bin/env bash 
+
+echo
+ curl -s "https://forecast.weather.gov/obslocal.php?warnzone=VAZ012" |\
+     html2text  |\
+     #sed -ne '/Location/p' -ne '/Hillsville/p'
+      grep -A 60 'Location' |\
+          grep -B 60 'Click' |\
+          head -n -1
+     

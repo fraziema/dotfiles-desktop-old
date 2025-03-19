@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -arvz /home/fraziema/ $1/fraziema

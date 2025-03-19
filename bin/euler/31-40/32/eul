@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+from sys import argv
+
+def digits(num): return  [int(t) for t in str(num)]
+
+def dupes(lst): return ((len(lst) -len(set(lst))))
+
+def zero(lst): return ((0 in lst))
+
+def resum(lst): return reduce(lambda x,y:10*x+y,lst)
+
+answer = []
+for ii in [digits(x) for x in range(1,100)]:
+    if zero(ii) or dupes(ii): continue
+    for jj in [digits(x) for x in range(100,10000)]:
+        if zero(jj) or dupes(jj): continue
+        kk = digits(resum(ii)*resum(jj))
+        if zero(kk+ii+jj) or len(kk+ii+jj)<9 or dupes(kk+ii+jj): continue
+        print ii, ' x ',jj,' = ',kk
+        answer.append(resum(kk))
+print answer
+print set(answer)
+print 'sum = ',sum(set(answer))

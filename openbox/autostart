@@ -10,11 +10,28 @@
 #
 #xfce-mcs-manager &
 
-xrandr --output VGA-1 --mode 1680x1050 --rate 59.95 &
-sleep 1 && xmodmap ~/.Xmodmap &
-sleep 1 && fbpanel & 
+xrandr --output HDMI-1 --mode 1680x1050 --rate 59.88
+#xrandr --output VGA-1 --mode 1680x1050 --rate 59.95 &
+#
+# key remapping (evolving over time) ===========================
+#
+# 1) xmodmap
+#sleep 1 && xmodmap ~/.Xmodmap &
+#
+# 2) setxkbmap options and inputplug to detect keyboard plug/unplugs
+#sleep 1 && inputplug  -c ./ip-keymap & # -d to not daemonize
+#
+#   3) directly edit /etc/default/keyboard to set option 'ctrl:nocaps' and use xcape to set escape on single control. important on remapping to change option using keywords from 
+#   "grep caps /usr/share/X11/xkb/rules/xorg.lst |less"
+# if you change the keyboard definition, you also need to run 
+# " sudo udevadm trigger --subsystem-match=input --action=change "
+#
+
+sleep 1 && xcape -e 'Control_L=Escape' -t 225 
+# uncomment for a panel with apps and a status tray
+#sleep 1 && xfce4-panel & 
 sleep 1 && nm-applet & 
 sleep 1 && ~/.fehbg &
+#sleep 1 && killall conky; sleep 2
 sleep 5 && conky -d & 
-sleep 10 && xscreensaver -no-splash
 

@@ -1,0 +1,190 @@
+#!/usr/bin/perl
+
+use Getopt::Long;
+use Term::ANSIColor;
+
+GetOptions(
+	"attack=s" => \$attack_sequence_string,
+	"crit-bonus=n"	=>	\$crit_confirm_bonus,
+	"hits" => \$is_hits,
+	"target=n" => \$target_AC,
+	"verbose" => \$is_verbose,
+	"terse" => \$is_terse,
+	"threat=n" => \$threat_min,
+	"help" => \$is_help
+);
+
+#-------------------------------------------------------------------------
+# Check the parameters. Certain things just have to be true.
+#
+
+&get_help;
+
+#-------------------------------------------------------------------------
+# Roll the dice.
+#
+
+my @attack_sequence = split(/,/, $attack_sequence_string);
+
+my @attack_result = &roll_dice(@attack_sequence);
+my $number_critical_hits = pop(@attack_result);
+my $number_hits = pop(@attack_result);
+
+
+#-------------------------------------------------------------------------
+# Output! If --hits is specified, just print out the number of hits.
+#
+
+&output(@attack_result,$number_critical_hits,$number_hits);
+
+
+
+
+
+
+#-------------------------------------------------------------------------
+# Subroutines follow
+#
+#-------------------------------------------------------------------------
+# roll_dice subroutine. This is the bit that actually generates the random
+# numbers and accounts for the special roll values, hits, and critical hits.
+# It expects to be passed an array of (possibly negative) integers and returns
+# an array of (possibly negative) integers. The last two entries in the returned
+# array are special values.
+
+sub roll_dice {
+	my @attack_sequence = @_;
+	my $roll;
+	my $modified_roll;
+	my $number_hits = 0;
+	my $number_critical_hits = 0;
+
+	foreach $modifier (@attack_sequence) {
+
+		#---------------------------------------------------------------------
+		# This bit is the actual generation of random numbers.
+		#
+		$roll = int(rand(20))+1;
+		$modified_roll = $roll + $modifier;
+		$confirm = 
+			($roll != 1)
+			? int(rand(20))+1+$crit_confirm_bonus+$modifier
+			: int(rand(20))+1+$modifier;
+
+		push(@attack_result, $modified_roll);
+
+		# Check: did I roll a 1?
+		if ($roll==1) {
+			push(@attack_result, "** Rolled a 1");
+			push(@attack_result, "  ** Confirmation $confirm");
+#			last;
+		} 
+
+		# If $threat_min is defined, then is this a critical threat?
+		if ($threat_min) {
+			if ($roll>=$threat_min && $roll != 20) {
+				push(@attack_result, "** Critical Threat");
+				push(@attack_result, "  ** Confirmation $confirm");
+
+				# update $number_hits
+				if ($modified_roll >= $target_AC) {
+					if ($confirm >= $target_AC) {
+						$number_critical_hits++;
+					} else{
+						$number_hits++;
+					}
+				} 
+				next;
+			}
+		}
+
+		# Check: did I roll a 20?
+		if ($roll == 20) {
+			push(@attack_result, "** Rolled a 20!");
+			push(@attack_result, "  ** Confirmation $confirm");
+
+			#update the number of hits or critical hits, as appropriate
+			if ($confirm >= $target_AC) {
+				$number_critical_hits++;
+			} else {
+				$number_hits++;
+			}
+		next;
+		}
+
+		# If I've gotten this far, then this roll is not a 1, not a 20, and not a
+		# critical threat. Just check whether it's a hit.
+		if ($modified_roll >= $target_AC) {$number_hits++;}
+	}
+	
+	#-----------------------------------------------------------------------
+	# Here's the bit where I actually have to return something.
+	#
+	push(@attack_result, $number_hits);
+	push(@attack_result, $number_critical_hits);
+	@attack_result;
+}
+
+#-------------------------------------------------------------------------
+# output subroutine. This subroutine expects to be given an array of (possibly
+# negative) integers. The last two entries are special and correspond to the
+# number of hits and critical hits. Every other entry in the array is a modified
+# attack roll.
+#
+sub output {
+	my $number_hits = pop(@_);
+	my $number_critical_hits = pop(@_);
+	my @attack_result = @_;
+
+	# If someone set $is_hits, then they want -just- the number of hits and the
+	# number of critical hits.
+	if ($is_hits) {
+		print"$number_hits regular hits,\n";
+		print"$number_critical_hits ";
+		print color 'bold red';
+		print"critical";
+		print color 'reset'; print" hits.\n";
+	} 
+
+	# They didn't set $is_hits, so give them everything.
+	else {
+		foreach $result (@attack_result) {
+			print $result;
+			print "\n";
+		} 
+		# If --target is specified, I can count up the number of hits and display that
+		# info too.
+		if ($target_AC) {
+			print color 'blue'; print"Summary:";print color 'reset';print"\n";
+			print"  $number_hits regular hits\n";
+			print"  $number_critical_hits ";
+			print color 'bold red';
+			print"critical";
+			print color 'reset'; print" hits.\n";
+		}
+	}
+}
+
+sub get_help {
+if (
+	($attack_sequence_string eq "") 
+	or ($is_help) 
+	or ($is_hits and not($target_AC and $threat_min))) 
+	{
+		print"attackv2 invocation syntax. Check the following example. \n";
+		print"  attackv2 --attack 21,21,21,16,16 --threat 19 --target 36\n";
+		print"What follows --attack must be a comma-separated string of (possibly
+negative) integers. This is the minimum argument you must give attackv2. The script
+will return your attack rolls.\n\n";
+		print"You may specify the threat range of your weapon with --threat. If you
+do, attackv2 will track critical threats and automatically make confirmation
+rolls.\n\n";
+		print"If you specify the target's Armor Class, then attackv2 will also print a
+summary of your attack. This summary includes the number of regular hits and
+the number of critical hits.\n\n";
+		print"Finally, if you specify --hits, you will see only the summary
+information, not the individual attack rolls. If you specify --hits you must
+also specify --threat and --target.\n";
+		exit;
+	}
+}

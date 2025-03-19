@@ -1,0 +1,29 @@
+#!/usr/bin/python
+
+from modeuler import isprime
+
+def quad(n,a,b): return n**2 + a*n + b
+
+def primes(A,B):
+    k = 0
+    while isprime(quad(k,A,B)): k += 1
+    return k
+
+P,Q,R = 0,0,0
+
+for I in range(1000):
+    if not isprime(I): continue
+    for J in range(1000):
+        if not isprime(J): continue
+
+        A = primes(I,J)
+        B = primes(-I,J)
+        C = primes(I,-J)
+        D = primes(-I,-J)
+
+        if A > R : P,Q,R = I,J,A
+        if B > R : P,Q,R = -I,J,B
+        if C > R : P,Q,R = I,-J,C
+        if D > R : P,Q,R = -I,-J,D
+
+print P,Q,R, P*Q

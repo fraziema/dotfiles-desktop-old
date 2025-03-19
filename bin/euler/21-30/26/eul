@@ -1,0 +1,34 @@
+#!/usr/bin/python
+
+from sys import argv
+from modeuler import isprime
+
+def ext(x,y):
+    a = x * 10
+    b = a // y
+    c = a % y
+    return b,c
+M = []
+N = []
+for Q in range(1,1000):
+    if not isprime(Q):continue
+    a,b = 1,Q
+    N.append(Q)
+    L = []
+    T = []
+    for q in range(1,b):
+        c,d = ext(a,b)
+        if (c,d) not in set(T):
+                T.append((c,d))
+        else:
+                break
+        L.append(str(c))
+        if not d: break
+        a = d
+    M.append(L)
+    #print b," => ",''.join(L) 
+K = [len(x) for x in M]
+print K
+print
+#print ''.join(M[K.index(max(K))]), K.index(max(K)), N[K.index(max(K))]
+

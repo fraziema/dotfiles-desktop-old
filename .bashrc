@@ -105,8 +105,16 @@ fi
 # . ~/.bash_prompt
 export TERM=xterm-256color
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/.local/bin
 if [ -f ~/.bash_functions ]; then
 	. ~/.bash_functions
+fi
+
+# set editor variable
+export EDITOR=/usr/bin/vim
+#if bash prompt file exists, use it
+if [ -f ~/.bash_prompt ]; then
+	. ~/.bash_prompt
 fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -118,3 +126,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Created by `pipx` on 2025-03-01 18:59:38
+export PATH="$PATH:/home/fraziema/.local/bin"

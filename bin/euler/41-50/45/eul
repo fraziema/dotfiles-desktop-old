@@ -1,0 +1,26 @@
+#!/usr/bin/python
+
+""" note: every odd triangular number is hexagonal; this allows to only test for pentagonalness of one set of numbers """
+
+def ispent(num):
+    a = (pow(24*num+1,0.5) + 1 )/6
+    return (a ) == int(a)
+
+def tri():
+    num = 285
+    found = 0
+    while not found:
+        num += 2
+        found = ispent((num*(num+1))/2)
+    print num, num*(num+1)/2
+
+def hex():
+    num = 143
+    found = 0
+    while not found:
+        num += 1
+        found = ispent((num*(2*num-1)))
+    print num, num*(2*num-1)
+
+tri()
+hex()

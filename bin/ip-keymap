@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo >&2 "$@"
+event=$1 id=$2 type=$3
+
+case "$event $type" in
+'XIDeviceEnabled XISlaveKeyboard')
+    setxkbmap -option caps:escape 
+#    setxkbmap -option compose:rwin
+    ;;
+esac
+

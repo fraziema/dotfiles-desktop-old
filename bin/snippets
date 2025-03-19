@@ -1,0 +1,3 @@
+cat /dev/urandom | rawtoppm -rgb 640 480 | pnmtopng >random-2013071806071374143007 
+od -vAn -N4 -tu1 < /dev/urandom
+function mkpw() { head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-8}; }

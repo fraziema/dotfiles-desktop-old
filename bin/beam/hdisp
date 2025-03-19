@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $1
+for i in *.gif; do 
+echo "<img src=$i width="45%">" >> $2.html; 
+done
+cd -

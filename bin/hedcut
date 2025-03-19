@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+filename=$(basename -- "$1")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+echo "Working on $filename.$extension " 
+if [ ! -f map.png ]
+then 
+	convert xc:White xc:Black -append map.png
+	echo "Generated new map.png"
+else
+	echo "map.png exists"
+fi
+
+convert $filename.$extension -modulate 100,0,100 +level 30%%,90%%  -remap map.png $filename-hedcut.png
+

@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+from sys import argv
+
+ans = [0 for x in xrange(1001)]
+sq = [x**2 for x in xrange(1001)]
+for perimeter in xrange(1001):
+    Q = []
+    for a in xrange(1,perimeter//2):
+        for b in xrange(a,perimeter//2): # this may not need to be divided
+            c = perimeter - a - b
+            d = sq[a] + sq[b]
+            e = sq[c]
+            if d == e:
+                Q.append((a,b,c))
+            elif d > e: break
+    ans[perimeter] = len(Q) 
+
+print ans.index(max(ans)), max(ans)
+
+
+

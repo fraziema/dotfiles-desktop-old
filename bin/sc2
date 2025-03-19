@@ -1,0 +1,3 @@
+#!/bin/bash
+
+dosbox ~/dos/SC2000/SC2000.EXE -exit

@@ -1,0 +1,109 @@
+#!/usr/bin/perl
+#
+
+sub Prob { # takes total wins to a percentage win. [$nnn == sides ** dice, global var to only calc once]
+	my (@list) = @_;
+	my @ret = ();
+	foreach (@list){ 
+		my $n = $_ / ($nnn);
+		push(@ret, $n);
+	}
+	return @ret;
+}
+
+sub Base { # convert a number to base-'sides' WARNING RECURSIVE
+	my ($n, $s) = @_;
+	return ($n) if ((int($n/$s)) == 0);
+	my $q = int($n / $s);
+	my $r = $n % $s;
+	my $b = Base($q, $s);
+	return "$b" ." "."$r";
+}
+
+sub Populate { #make an array from 1 to $nnn with $i[$j] == $j, convert to base-'sides'
+	my ($sides, $dice) = @_;
+	my @list = ();
+	my $nnnnnn = $sides ** $dice;
+	for ($i = 0 ; $i < $nnnnnn ; $i++) {
+		$list[$i] = Base($i, $sides) . " ";
+
+	print $i ." of ". $nnnnnn ." completed\n" if (($i % 100) == 0) ;
+	}
+	return @list;
+}
+
+sub Losses{ #ratios of losses
+	my ($at_risk, @totals) = @_;
+	my $aloss, $dloss, $aperd, $dpera = 0;
+	for($i=0; $i <= $at_risk; $i++){
+		$aloss += ($totals[($at_risk-$i)] * ($i)) ;
+		$dloss += ($totals[$i] * $i );
+		}
+	my @ret = ();
+	push(@ret, $aloss);
+	push(@ret, ($aloss / $dloss));
+	push(@ret, ($dloss / $aloss));
+
+	return @ret;
+}
+
+die("usage: dice.pl <sides> <total> <attack> <risking>") if (($ARGV[3] == "") || ($ARGV[4] != ""));
+
+$sides = $ARGV[0]; 
+$tdice = $ARGV[1];
+
+@rolls = Populate($sides, $tdice); 
+print "Array popuated\n\n";
+
+$att = $ARGV[2];
+$def = $tdice - $att;
+
+@wins = ();
+$risk = $ARGV[3];
+$nnn = $sides ** $tdice;
+$m =0;
+
+foreach (@rolls) {
+	my (@ad) = ();
+	my (@dd) = ();
+
+	my @d = split(/ /,$_); # take each base-sides number and split into 'dice' 
+	@c = reverse(@d); # fix for short numbers -- reverse, then
+	for($i = scalar(@c); $i < $tdice; $i++){
+		push(@c, 0);  	# sppend zeros
+	}
+	@d = reverse(@c);  #and re-reverse, putting leading zeros to the number
+	for($i = 0; $i < $tdice ; $i++){
+			my $h = $d[$i];
+			if ($i < $def) { $dd[$i] = $h }			#assign first "def" digits to defense
+				else { $ad[($i-$def)] = $h }	#and last "att" to attack
+	}
+	my (@sad) =	reverse(sort{$a <=> $b}(@ad)); #and sort all high-to-low
+	my (@sdd) = reverse(sort{$a <=> $b}(@dd));	
+#	print "@d \t | @sad | @sdd \n";
+
+	my $t = 0;
+	for($i = 0; $i < $risk; $i++){
+		$t++ if $sad[$i] > $sdd[$i]; #pairwise dice comparison, binning wins for attack 0,1,... num at risk
+	}
+	$wins[$t]++; # only keep this or the next line, as is
+#	print ++$wins[($t)] ."\t"; print $t . "\n"
+	$m++;
+	print $m ." of $nnn\n" if (($m % 100) == 0) ;
+}
+print "Done.\n\n";
+
+@odds = Prob(@wins); #do math -- odds of winning
+
+for($i = 0; $i <= $risk; $i++){ #output
+	printf("$i\t\t\t");
+}
+print "\n";
+printf("%d \t\t\t", $_) foreach @wins;	 print "\n";
+printf("%.4f \t\t\t", $_) foreach @odds; print "\n\n";
+
+@res = Losses($risk, @odds); #more math -- losses per side
+
+printf("Attacker loss per roll: %.4f \n", $res[0]);
+printf("Attacker loss per defender: %.4f \n", $res[1]);
+printf("Defender loss per attacker: %.4f \n", $res[2]);

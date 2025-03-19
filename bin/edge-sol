@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+filename=$(basename -- "$1")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+echo "Working on $filename.$extension " 
+
+for i in `seq 1 ${2:-5}`; do 
+	convert $filename.$extension -edge $i -solarize 1 $filename-edsol-$i.$extension
+ done 
+

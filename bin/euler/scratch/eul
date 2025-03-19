@@ -1,0 +1,38 @@
+#!/usr/bin/python
+
+from fractions import gcd
+from modeuler import isprime
+import curses
+
+def rho(num):
+    def f(x,c,n): return (x*x + c)%n
+
+    c = 1 
+    while True:
+        if c == 0 or c ==2 : c +=1
+        t=2; h=2; d=1; 
+        while d == 1:
+            t = f(t,c,num)
+            h = f(f(h,c,num),c,num)
+            d = gcd(t-h,num)
+        if d < num and d > 0: return d
+        c += 1
+
+scr = curses.initscr()
+scr.keypad(1)
+
+begin_x = 20; begin_y = 7
+height = 5; width = 40
+win = curses.newwin(height, width, begin_y, begin_x)
+pad = curses.newpad(100, 100)
+for y in range(8, 100):
+        if isprime(y): continue
+        try:
+            pad.addstr(1,1,str(y)+" "+str(rho(y)) )
+            pad.refresh(0,0, 5,5, 20,75)
+            scr.getch()
+
+        except curses.error:
+            pass
+
+#scr.keypad(0); curses.echo(); curses.endwin()

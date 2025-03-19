@@ -1,0 +1,9 @@
+#/bin/bash
+
+echo "<html> <body>" >book.htm ;
+
+for filename in *.jpg; do 
+	echo "<img src=\"$filename\" width=1200px >" >> book.htm; 
+done; 
+
+echo "</body></html>" >> book.htm 

@@ -1,0 +1,35 @@
+#!/usr/bin/python
+"""
+If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+
+If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used? 
+
+
+NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+"""
+
+ones = ['ten','one','two','three','four','five','six','seven','eight','nine']
+teens = ['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
+tens = ['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
+num = ""
+s = 0
+for k in range(1,1000):
+    x,y,z = k // 100 , k % 100 , k % 10
+    if x: 
+        num = num + ones[(x%10)] + 'hundred' 
+        if y or z: num = num + 'and'
+    if y >= 10:
+       if y < 20:
+           z = 0
+           num = num + teens[(y%10)]
+       else:
+           num = num + tens[(y//10)]
+    if z:
+       num = num +  ones[(z%10)]
+    print num
+    s += len(num)
+    num = ""
+num='onethousand'
+print num
+s += len(num)
+print s

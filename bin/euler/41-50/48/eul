@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+
+m = 10**10
+tot = 0
+for k in xrange(1,1001):
+    this = 1
+    for n in xrange(k):
+        this *= k
+        this %= m
+    tot += this
+    tot %= m
+print tot
+        

@@ -1,0 +1,46 @@
+#!/usr/bin/python
+
+f = open('data','r')
+a=b=[]
+for line in f:
+   b = (line.strip())
+   b = [int(x) for x in b.split(' ')]
+   a.append(b)
+
+print 'ok 1'
+prod = 0
+p,q = 0,0
+# x, y is row, column
+def lr(x,y):
+    return a[x][y]* a[x][y+1]* a[x][y+2]* a[x][y+3]
+def ud(x,y):
+    return a[x][y]* a[x+1][y]* a[x+2][y]* a[x+3][y]
+def rd(x,y):
+    return a[x][y]* a[x+1][y+1]* a[x+3][y+2]* a[x+3][y+3]
+def ru(x,y):
+    return a[x][y]* a[x-1][y+1]* a[x-2][y+2]* a[x-3][y+3]
+    
+print 'ok 2'
+for p in range(20):
+    for q in range(16):
+        prod = max(lr(p,q),prod)        
+print prod
+print 'ok 3'
+for p in range(16):
+    for q in range(20):
+        prod = max(ud(p,q),prod)        
+print prod
+
+print 'ok 4'
+for p in range(16):
+    for q in range(16):
+        prod = max(rd(p,q),prod)        
+
+print prod
+print 'ok 5'
+for p in range(3,20):
+    for q in range(16):
+        prod = max(ru(p,q),prod)        
+
+print 'ok 6'
+print prod

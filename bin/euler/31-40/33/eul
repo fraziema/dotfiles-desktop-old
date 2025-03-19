@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+from sys import argv
+
+answer = []
+
+for ii in range(10,100):
+    k = ii % 10
+    for jj in range(10*k+1,10*(k+1)):
+        a = float(ii)/float(jj)
+        b = float(ii//10)/float(jj%10)
+        if a != b: continue
+        if a == 1.0: continue
+        answer.append([ii,jj,a])
+
+
+print answer

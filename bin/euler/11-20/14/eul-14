@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+
+def collatz(n):
+    if n%2==0: return n/2
+    return 3*n+1
+list = [0,1]
+for x in range(2,1000000):
+    a = 1 
+    b = x
+    while(b>1): 
+        b = collatz(b)
+        if b < x:
+            a += list[b]
+            break
+        a += 1
+    list.append(a)
+q = max(list)
+print list.index(q), q

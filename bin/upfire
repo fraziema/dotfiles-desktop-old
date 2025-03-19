@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+cd Downloads
+tar -xf firefox*
+sudo mv -i firefox /opt/

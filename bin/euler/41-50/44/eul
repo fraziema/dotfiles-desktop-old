@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+def ispent(num):
+    a = (pow(24*num+1,0.5) + 1 )/6
+    return (a ) == int(a)
+
+found = False
+i = 1
+while not found:
+    n = (3*i*i -i)/2
+    for k in xrange(i-1,0,-1):
+        m = (3*k*k -k)/2
+        if ispent(n-m) and ispent(n+m):
+                print n - m
+                found = True
+                break
+    i += 1
+

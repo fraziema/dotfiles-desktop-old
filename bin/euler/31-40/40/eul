@@ -1,0 +1,26 @@
+#!/usr/bin/python
+
+from modeuler import digits
+
+dig = 0
+ans = []
+r = 1000000
+
+# # this takes too long
+#for k in xrange(1,r+1):
+#    if len(dig) > r : break
+#    dig = dig + digits(k)
+s = 1 
+for k in xrange(1,r+1):
+    tmp = len(str(k))
+    dig += tmp
+    #print k, tmp, dig
+    if dig < s: continue
+    ans.append(digits(k)[s-dig-1])
+    print dig,dig-s, digits(k),ans[-1]
+    s *= 10
+    if dig > r : break
+#ans = [dig[10**x] for x in range(7)]
+print ans
+print reduce(lambda a,b:a*b, ans)
+

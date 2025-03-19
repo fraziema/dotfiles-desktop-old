@@ -1,0 +1,9 @@
+#!/bin/bash
+
+i=$2
+j=$(echo $2 - 5 | bc)
+k=$(echo $2 - 10 | bc)
+l=$(echo $2 - 15 | bc)
+
+./attackv2 --attack $i,$i,$j,$k,$l --threat $1 
+

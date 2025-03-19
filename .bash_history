@@ -1,1175 +1,1194 @@
-rm .bash_history 
+sudo swapoff -a ; sleep 30; sudo swapon -a 
+vi .bash_history 
+sudo swapoff -a ; sleep 30; sudo swapon -a 
+sudo apt update && sudo apt install signal-desktop
+dmesg -w
+sudo dmesg -w
+sudo dmesg -wT
+sudo synaptic
+which print
+lpstat -R
+man lpstat
+lpstat -o
+cancel 24576
+cancel 70656
+lpstat -o
+sudo cancel 70656
+sudo cancel 24576
+lpstat
+cancel
+lpstat
+cancel -a
+lpstat
+rdfind -n
+sudo aptitude install rdfind  
+rdfind -n .
+rdfind -n true
+rdfind -n true .
+less results.txt 
+alias 
+filerip https://www.bu.edu/astronomy/academics/courses/lab-manuals/
+filerip -A pdf https://www.bu.edu/astronomy/academics/courses/lab-manuals/
+ls
+rm results.txt 
+alias 
+mirror -A pdf https://www.bu.edu/astronomy/academics/courses/lab-manuals/
+mirror https://www.bu.edu/astronomy/academics/courses/lab-manuals/
+ls
+cd www.bu.edu/astronomy/academics/courses/lab-manuals/
+ls
+firefox index.html 
+sed '/pdf/p'
+sed '/pdf/p' index.html 
+sed '/pdf/p' index.html |less
+sed -e'/<a h/p -e'/pdf/p' index.html |less
+sed -e'/<a h/p -e '/pdf/p' index.html |less
+sed -e'/\<a h/p -e '/pdf/p' index.html |less
+sed -ne'/a h/p -ne '/pdf/p' index.html |less
+sed -ne'/a h/p -ne '/pdf/p' index.html 
+sed -ne'/<a h/p' -ne '/pdf/p' index.html 
+sed -e'/<a h/p' -e '/pdf/p' index.html 
+sed -e'/<a h/p' -e '/pdf/p' -e '/<scr/d' index.html 
+sed -e'/<a h/p' -e '/pdf/p' -e '/scrip/d' index.html 
+man sed
+cd ~
+rm www.bu.edu/ -r
+grep --include=\*.pdf -iRl "ab manua" .
+grep --include=\*.pdf -iRl "ab manua" ~/[a-z]*
+grep --include=\*.pdf -iRl "ab manua" ~/[A-Za-z]*
+grep --include=\*.pdf -iRl "ab manua" ~/Downloads
+grep --include=\*.pdf -iRl "112" ~/Downloads
+grep --include=\*.pdf -iRl "astronomy" ~/Downloads
+grep --include=\*.pdf -iRl "radford" ~/Downloads
+dc 
+lpstat
+cancel -a
+lpstat
+cancel -a
+lptest 
+man lptest
+man lp
+lpstat 
+lpoptions 
+man lpoptions 
+sudo gparted
+sudo aptitude update 
+sudo aptitude upgrade 
+sudo aptitude reinstall cups
+hist
 history 
+cancel -a
+lpstat
+sudo reboot
+sudo gnome-control-center 
+sudo aptitude install printer-driver-all
+lpstat -a
+sudo aptitude purge cups
+cd Downloads/
+ls
+sudo aptitude install system-config-printer
+sudo system-config-printer
+sudo aptitude install cups
+sudo system-config-printer
+ls
+ls *.gz
+unzip 
+ls *.gz
+sudo ls
+chmod 744 linux-brprinter-installer-2.2.4-1
+sudo ./linux-brprinter-installer-2.2.4-1 
+sudo 
+sudo system-config-printer 
+sudo dpkg -i b*.deb c*.deb
+sudo aptitude remove ipp-usb 
+lpstat
+lpstat -a
+sudo system-config-printer
+lpstat -a
+lp
+history 
+sudo lpadmin -p HL2240D -o pdftops-renderer-default=pdftops
+sudo lpadmin -p "HL2240D" -o pdftops-renderer-default=pdftops
+sudo lpadmin -p "HL2240D" -o pdftops-renderer-default=gs
+sudo apt install brother-lpr-drivers-laser brother-cups-wrapper-laser brother-lpr-drivers-common
+sudo Downloads/linux-brprinter-installer-2.2.4-1 
+lpd
+sudo lpd
+sudo apt purge brother-lpr-drivers-laser brother-cups-wrapper-laser && apt autoremove
+sudo apt upgrade ghostscript
+sudo lpadmin -p "HL2240D" -R pdftops-renderer-default
+sudo lpadmin -p "HL2240D" -o pdftops-renderer-default=gs
+sudo dpkg -i Downloads/cupswrapperHL2240D-2.0.4-2.i386.deb 
+sudo lpadmin -p "HL2240D" -o pdftops-renderer-default=MuPDF
+sudo cupsctl restart
+sudo systemd restart cups
+sudo systemctl restart cups.service
+sudo lpadmin -p "HL2240D" -o pdftops-renderer-default=pdftocairo
+sudo systemctl restart cups.service
+sudo lpadmin -p "HL2240D" -o pdftops-renderer-default=hybrid
+sudo systemctl restart cups.service
+sudo synaptic
+sudo Downloads/linux-brprinter-installer-2.2.4-1 
+lpd
+sudo lpadmin
+lpstat
+sudo system-config-printer
+ytmp3 https://www.youtube.com/watch?v=3gHl4P7AXt0
+ytmp3 https://www.youtube.com/watch?v=9mIaK-gV9Q0&list=OLAK5uy_k7qfufYtCDH6vHLtsF3dKnt7U2_z1feDk&index=1&pp=8AUB
+ytmp3 https://www.youtube.com/watch?v=icY5DYwOHyA&list=OLAK5uy_mlzFsBjF_5v9Rjn9DIn6qPnLNQgZboLjA&index=1&pp=8AUB
+ytmp3 https://www.youtube.com/watch?v=tewx5FCuXgs&list=OLAK5uy_kwSz9fCKHxWwWQZnlFHIPT1TmnEmx4_vY&index=1&pp=8AUB
+ytmp3 https://www.youtube.com/watch?v=RmOhSElo_JI&list=OLAK5uy_lRZWWxAY7zIdjVwpn9HqW_61KrFZJv4LE&index=1&pp=8AUB
+ytmp3 https://www.youtube.com/watch?v=suXO7Yy_A-8&list=OLAK5uy_kcp0RpFTl5EtFG7dg4e9vbE-KH56h5mLA&index=1&pp=8AUB
+ytmp3 https://www.youtube.com/watch?v=7zTei5RMhQ8&list=OLAK5uy_mR7GJvs5WEntKTY82TsSAFBgDLDOEqKYs&index=1&pp=8AUB
+ytmp3 https://www.youtube.com/watch?v=wPlOYPGMRws&list=OLAK5uy_n2EyGSzgPcGJtF3-inSboC-aU3Nm8jKGE&index=1&pp=8AUB
+fg
+delay
+sudo gparted
+dmesg
+sudo dmesg
+sudo -s
 exit
+cd Downloads/br/
+chmod 744 linux-brprinter-installer-2.2.4-1
+./linux-brprinter-installer-2.2.4-1 
+sudo ./linux-brprinter-installer-2.2.4-1 
+sudo aptitude install cups
+sudo ./linux-brprinter-installer-2.2.4-1 
+cd ../br2240/
+ls
+chmod 744 linux-brprinter-installer-2.2.4-1
+./linux-brprinter-installer-2.2.4-1 
+sudo ./linux-brprinter-installer-2.2.4-1 
+sudo aptitude install lpr
+sudo aptitude install lprint 
+ls
+cd ~
+ls
+cat b002205.txt 
+ls
+cd Documents/
+ls
+evince document.pdf 
+evince 4bb20b8a-e71a-410c-b149-a8b8e922ed8b.pdf 
+lpr 4bb20b8a-e71a-410c-b149-a8b8e922ed8b.pdf 
+man lpd
+sudo aptitude install printer-driver-all
+lpstat -a
+sudo aptitude install lprng
+lprint 4bb20b8a-e71a-410c-b149-a8b8e922ed8b.pdf 
+lprint
+man lprint
+lpr
+man lpr
+lpr 4bb20b8a-e71a-410c-b149-a8b8e922ed8b.pdf 
+ls
+lpstat 
+lprm 
+lpstat 
+cd ~/Downloads/
+cd br2240/
+ls
+./linux-brprinter-installer-2.2.4-1 
+sudo ./linux-brprinter-installer-2.2.4-1 
+sudo dpkg -i -forceall hl2240dlpr 
+sudo dpkg -i  hl2240dlpr 
+sudo dpkg -i  hl2240dlpr-2.1.1-1a.i386.deb 
+lpr ~/Documents/4bb20b8a-e71a-410c-b149-a8b8e922ed8b.pdf 
+lpstat 
+lprm
+lpstat 
+./linux-brprinter-installer-2.2.4-1 
+sudo ./linux-brprinter-installer-2.2.4-1 
+cd ../br2270/
+ls
+./linux-brprinter-installer-2.2.4-1 
+sudo ./linux-brprinter-installer-2.2.4-1 
+sudo reboot
+exit
+sudo aptitude install cups-common cups-filters cupswrapperhl2240d cupswrapperhl2270dw 
+sudo aptitude install cups-common cups-filters 
+sudo aptitude install cups-client 
+cupstestppd 
+sudo aptitude install cups
+delay
+sudo apt install --reinstall hplip
+sudo aptitude install ipp-usb 
+sudo aptitude reinstall ipp-usb 
+sudo aptitude reinstall cupswrapperhl2240d 
+sudo aptitude reinstall cupswrapperhl2240d:i386
+cd Downloads/br2240/
+ls
+sudo aptitude install ./cupswrapperHL2240D-2.0.4-2a.i386.deb 
+sudo gdebi-gtk cupswrapperHL2240D-2.0.4-2a.i386.deb 
+sudo gdebi-gtk cupswrapperHL2240D-2.0.4-2.i386.deb 
+ls
+chmod 744 uninstaller_HL2240D 
+sudo chmod 744 uninstaller_HL2240D 
+./linux-brprinter-installer-2.2.4-1 
+sudo ./linux-brprinter-installer-2.2.4-1 
+sudo gdebi hl2240dlpr-2.1.1-1a.i386.deb 
+ls
+sudo gdebi-gtk brgenml1cupswrapper-3.1.0-1.i386.deb 
+sudo synaptic
+sudo gdebi hl2240dlpr-2.1.1-1.i386.deb 
+sudo dpkg -i --force-all hl2240dlpr-2.1.1-1.i386.deb 
+sudo dpkg -i --force-all hl2240dlpr-2.1.1-1a.i386.deb 
+sudo dpkg -r --force-all hl2240dlpr-2.1.1-1a.i386.deb 
+sudo synaptic
+sudo dpkg --remove --force-all  hl2240dlpr
+sudo rm /var/lib/dpkg/info/hl22*
+sudo dpkg --configure -D 777 hl2240dlpr
+sudo rm /var/lib/dpkg/info/hl22*
+sudo synaptic
+sudo apt -f install
+sudo dpkg --configure -D 777 hl2240dlpr:i386
+sudo dpkg --remove hl2240dlpr:i386
+sudo dpkg --reinstall hl2240dlpr:i386
+sudo aptitude purge hl2240dlpr 
+sudo aptitude purge hl2240dlpr:i386
+./linux-brprinter-installer-2.2.4-1 
+sudo ./linux-brprinter-installer-2.2.4-1 
+sudo synaptic
+sudo reboot
+cd ..
+history 
+delay
+jupyter
+jupyter 
+jupyter -h
+jupyter notebook
+sudo synaptic
+pip3 install matplotlib
+jupyter notebook
+delay
+sudo aptitude install xfig
+xfig
+sudo aptitude install xfig-doc xfig-libs 
+xfig
+cd Documents/physics/
+mkdir uva-gal-1425
+cd uva-gal-1425/
+siterip http://galileoandeinstein.phys.virginia.edu/142E/10_1425_web_ppt_pdfs/
+siterip http://galileoandeinstein.phys.virginia.edu/142E/
+siterip http://galileoandeinstein.phys.virginia.edu/142E/2415_Powerpoint/
+./tikzit 
+./bin/OpenSCAD 
+lsb_release -a
+sudo aptitude update 
+sudo aptitude upgrade 
+sudo aptitude full-upgrade 
+sudoedit /etc/apt/sources.list
+sudo cp /etc/apt/sources.list{,.bak}
+ls /etc/apt
+sudoedit /etc/apt/sources.list
+sudo aptitude clean
+sudo aptitude update 
+sudo aptitude upgrade 
+sudo aptitude full-upgrade 
+sudo reboot
+vim .bash_aliases
+xdotool
+sudo aptitude install xdotool
+man xdotool
+xdotool mousemove_relative 5 5 mousemove_relative restore
+xdotool mousemove_relative 5 5 mousemove_relative -- restore
+xdotool mousemove_relative 5 0 mousemove_relative -- restore
+xdotool mousemove_relative 25 0 mousemove_relative -- restore
+man xdotool
+xdotool mousemove_relative 25 0 mousemove restore
+xdotool mousemove 25 0 mousemove restore
+xdotool mousemove 250 0 mousemove restore
+alias jiggle="xdotool mousemove 250 0 mousemove restore"
+while true; do jiggle; sleep 500; done
+vim .bash_aliases 
+jiggle 
+vim .bash_aliases 
+jiggle 
+xrandr
+jiggle 
+nm-applet 
+ls
+ls -a
+exit
+ls -a
+ls -a | less
+exit
+lsblk
+ls 
+lsblk
+dd if=haiku-r1beta5-x86_64-anyboot.iso of=/dev/sdc
+dmesg
+sudo dmesg
+sudo gparted
+dd if=gparted-live-1.6.0-10-amd64.iso of=/dev/sdc bs=4m; sync
+dd if=gparted-live-1.6.0-10-amd64.iso of=/dev/sdc bs=4M; sync
+dd if=haiku-r1beta5-x86_64-anyboot.iso of=/dev/sdc bs=1M
+sudo iwconfig 
+nm-applet 
+gvim
+ls .dotfiles/
+gvim
+dc
+vim bin/forecast-home 
+vi .config/conky/conky.conf 
+weather 
+jiggle
+dosbox 
+lsblk
+wget --continue https://download.tails.net/tails/stable/tails-amd64-6.11/tails-amd64-6.11.img 
+sudo gparted
+dd if=Downloads/archlinux-2025.01.01-x86_64.iso of=/dev/sdc bs=4M status=progress
+sudo sync
+jiggle 
+sudo synaptic
+sudo aptitude install polyglot
+sudo aptitude install audacity
+history
+sudo synaptic
+lsblk 
+history | grep dd
+dd if=haiku-r1beta5-x86_64-anyboot.iso of=/dev/sdc bs=1M
+sudo aptitude install f3
+man f3
+man f3fix 
+lsblk 
+f3write /media/fraziema/3EFB-A3FE/
+f3read /media/fraziema/3EFB-A3FE/
+f3probe /media/fraziema/3EFB-A3FE/
+lsblk
+f3probe /dev/sdc
+lsblk
+sudo gparted
+lsblk
+f3probe /dev/sdc
+sudo gparted
+less /etc/hosts
+jiggle 
+xev
+vim .config/openbox/openbox-rc.xml 
+vim .config/openbox/rc.xml 
+dc
+dc
+jiggle 
+sudo aptitude install keyd
+sudo aptitude install keyboard-configuration 
+service keyboard-setup restart
+sudo service keyboard-setup restart
+sudo dpkg-reconfigure keyboard-configuration 
+less .bashrc
+less .xinitrc
+less .x*
+ls .*
+ls ./.*
+ls
+ls -a
+less .Xresources 
+man xmodmap 
+vim .config/openbox/autostart 
+xmodmap .Xmodmap 
+vim
+vim .Xmodmap 
+xmodmap .Xmodmap 
+vim .Xmodmap 
+man xmodmap
+mv .Xmodmap .Xmodmap-bak
+touch .Xmodmap
+xmodmap .Xmodmap 
+cp .Xmodmap-bak .Xmodmap
+vim .Xmodmap
+rm .Xmodmap
+sudo dpkg-reconfigure keyboard-configuration 
+xmodmap -pke >~/.Xmodmap-default
+less .Xmodmap-default 
+xmodmap -pke >~/.Xmodmap
+vim .Xmodmap
+xmodmap .Xmodmap
+setxkbmap -option
+xmodmap .Xmodmap
+vim 
+setxkbmap -option caps_lock:control
+setxkbmap -h
+man setxkbmap 
+setxkbmap -keycodes
+setxkbmap -keycodes 66
+setxkbmap -keycodes 65
+setxkbmap -keycodes 66
+setxkbmap -option
+setxkbmap -keycodes 66
+man setxkbmap 
+xkbcomp 
+man xkbcomp 
+showkey
+showkey -
+showkey -k
+showkey -k -
+man showkey
+showkey -ak
+showkey -a
+showkey -K
+showkey -k
+showkey -ask
+vim .Xmodmap
+xmodmap .Xmodmap
+sudo dpkg-reconfigure keyboard-configuration 
+delay
+vim
+vim .Xmodmap
+xmodmap .Xmodmap
+vim .Xmodmap
+xmodmap .Xmodmap
+vim .Xmodmap
+xmodmap .Xmodmap
+vim .Xmodmap
+xev
+man xmodmap
+xev
+QWERTYUIOP[]\\{}|`~1234567890-=+_)_))(*&*&^%$#@#xevZXCVBNM,./?><mnbvccxz":lklkjhjhgffghdssdfaasdfghjjkkl:"
+history | grep fb
+history | less
+lsblk
+history 
+history | tail -n 50
+history | less
+f3probe /dev/sdc
+xmodmap .Xmodmap; xev
+lsblk
+f3probe /dev/sdb
+lsblk
+f3probe /dev/sdb
+xmodmap .Xmodmap
+f3probe /dev/sdb
+jiggle
+man pandoc
+which ocr
+sudo aptitude install ocrmypdf
+ocrmypdf Downloads/Approved\ Gifted\ Plan\ with\ Signatures.pdf ccpsdLP
+ls
+less ccpsdLP 
+mv ccpsdLP ccpsdLP.pdf
+evince ccpsdLP.pdf 
+gvim
+less m1 
+xmodmap .Xmodmap
+xev
+ls
+cp -r * ../6474-DBFC/New\ folder/
+weather 
+weather
+forecast
+forecast-home 
 metar khlx
 metar kbcb
-vi bin/Meaning_of_Liff_edited.txt 
-cp bin/Meaning_of_Liff_edited.txt Documents/pdf/books/
-./primes 37
-./primes 371
-./primes 3712
-./primes 34567
-./primes 345
-./primes 1000001
-./primes 100001
-./primes 101
-./primes 1
-./primes 13
-./primes 14
-./primes 17
-./primes 21
-./primes 26
-./primes 31
-./primes 37
-./primes 35
-vi primes 
-./primes 35
-vi primes 
-./primes 35
-vi primes 
-./primes 35
-./primes 3567
-./primes 3567231561
-./primes 356723156132379
-./primes 35672315613237913465431
-./primes 35672315613237913465431111
-./primes 3567231561323791346543111111111111119
-./primes 35672315613237913465431111111111111191
-./primes 356723156132379134654311111111111111911
-./primes 356723156132379911
-./primes 356723156132371
-./primes 356723156131
-./primes 3567231561311
-./primes 356723156133
-./primes 356723156137
-./primes 356723156139
-./primes 356723156141
-./primes 356723156143
-./primes 356723156147
-./primes 356723156149
-./primes 356723156151
-./primes 356723156153
-./primes 356723156157
-./primes 356723156159
-./lsp
-./lsp .
-./lsp risk/
-ls -hovA --indicator-style=file-type --color=always --group-directories-first --time=ctime --time-style=full-iso 
-ls -hovA --indicator-style=file-type --color=always --group-directories-first --time=ctime --time-style=full-iso |tr -s "[:blank:]" " "|cut -d" " -f3-
-./lsp risk/
-man col
-./lsp risk/
-man col
-./lsp risk/
-htop
-vi .config/openbox/menu.xml 
-htop
-which alternatives
-locate alternatives
-update-alternatives 
-update-alternatives --get x-terminal-emulator
-update-alternatives --list x-terminal-emulator
-update-alternatives --set x-terminal-emulator
-update-alternatives --set-selections x-terminal-emulator
-update-alternatives --help
-update-alternatives --help|less
-update-alternatives --config x-terminal-emulator
-sudo update-alternatives --config x-terminal-emulator
-rxvt
-rxvt-unicode 
-rxvt-xterm 
-cd bin/
-cat imfrip
-mv imfrip misc/
-mv imfripall imfrip
-sudo aptitude install openscad
-sudo apt install ./hl2240dlpr-2.1.1-1a.i386.deb 
-sudo apt install ./hl2240dlpr-2.1.1-1.i386.deb 
-sudo apt install ./cupswrapperHL2240D-2.0.4-2.i386.deb 
-sudo aptitude install ./cupswrapperHL2240D-2.0.4-2.i386.deb 
-sudo aptitude install "./cupswrapperHL2240D-2.0.4-2.i386.deb" 
-sudo dpkg -i ./cupswrapperHL2240D-2.0.4-2.i386.deb 
-sudo ./linux-brprinter-installer-2.0.0-1 
-sudo aptitude install lpr
-lpr -P HL2240 /usr/share/cups/data/testprint
-sudo aptitude install printer-driver-brlaser
-sudo gnome-control-center 
+jlab
+sudo aptitude purge jupyterlab-desktop 
+jupyter-notebook 
+sudo aptitude search vpython
+pip3 install vpython
+apt install python3-vpython
+exit
+jupyter
+jupyter notebook
+sudo pip install vpython
+sudo conda install -c vpython vpython
+sudo pip install vpython
+jupyter notebook
+sudo pip install jupyterlab
+sudo aptitude install python3-jupyterlab-server 
+jupyter -h
+jupyter 
+jupyter | less
+jupyter 
+man jupyter
+jupyter server
+jupyter-serverextension 
+jupyter-serverextension enable
+jupyter-notebook 
+which jupyter
+jupyter --version
+sudo aptitude install jupyterlab
+sudo aptitude install python3-jupyterlab-*
+sudo aptitude install python3-jupyterlab-server 
+jupyter --version
+sudo aptitude reinstall python3-jupyterlab-server 
+jupyter --version
+pip3 install jupyterlab
+jupyter-serverextension enable --py jupyterlab
+sudo aptitude install python3-jupyterlab-server 
+sudo aptitude install python3-jupyter-server 
+python3 --version
+jupyter-notebook 
+sudo gdebi-gtk Downloads/JupyterLab-Setup-Debian-x64.deb 
+jupyter
+jupyter server
+sudo aptitude install  jupyter-server 
+jupyter server
 sudo synaptic
-pan
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
-cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |  sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-sudo apt update && sudo apt install signal-desktop
-dig @ns1.google.com TXT o-o.myaddr.l.google.com +short
-dig @ns1.google.com TXT o-o.myaddr.l.google.com +short -4
-dig @resolver4.opendns.com myip.opendns.com +short -4
-dig @ns1.google.com TXT o-o.myaddr.l.google.com +short -4
-echo $(( 30* (1+$RANDOM) ))
-echo $(( 30* (1 + $RANDOM % 1) ))
-echo $(( 30* (1 + $RANDOM % 10) ))
-echo $(( 30* (1 + $RANDOM % 2) ))
-echo $(( 30 + ($RANDOM % 30) ))
-isnetup 
-vi .config/conky/conky.conf 
-man date
-man ping
-ping -4 -c 10 -q google.com
-ping -4 -c 10 -w 1 -q google.com
-ping -4 -c 10 -w 5 -q google.com
-ping -4 -c 5 -w 15 -q google.com
-vi bin/isnetup
-chmos 744 bin/isnetup 
-chmod 744 bin/isnetup 
-isnetup 
-isnetup | tail -n 2 
-vi bin/isnetup
-isnetup 
-vi .config/conky/conky.conf 
-vi bin/isnetup
-isnetup 
-fg
-isnetup 
-killall conky 
-killall conky -9
-conky -d
-killall conky -9
-htop
-killall conky -9
-vi bin/isnetup
-conky -d
-vi bin/isnetup
-fg
-vi .config/conky/conky.conf 
-fg
-vi bin/isnetup
-fg
-vi bin/phosts
-shuf bin/phosts 
-man shuf
-vi bin/isnetup 
-vi bin/phosts
-ping -4 -c 1 -w 5 -q bing.com
-ping -4 -c 1 -w 5 -q twitter.com
-ping -4 -c 1 -w 5 -q duckduckgo.com
-ping -4 -c 1 -w 5 -q facebook.com
-ping -4 -c 1 -w 5 -q tumblr.com
-ping -4 -c 1 -w 5 -q opendns.com
-ping -4 -c 1 -w 5 -q verizon.com
-ping -4 -c 1 -w 5 -q fark.com
-ping -4 -c 1 -w 5 -q metafilter.com
-ping -4 -c 1 -w 5 -q hackaday.com
-ping -4 -c 1 -w 5 -q time.gov
-ping -4 -c 1 -w 5 -q weather.gov
-ping -4 -c 1 -w 5 -q nist.gov
-ping -4 -c 1 -w 5 -q bbc.co.uk
-isnetup
-ping -4 -c 1 -w 5 -q amazon.com
-ping -4 -c 1 -w 5 -q ebay.com
-ping -4 -c 1 -w 5 -q paypal.com
-ping -4 -c 1 -w 5 -q nasa.gov
-ping -4 -c 1 -w 5 -q vt.edu
-ping -4 -c 1 -w 5 -q radford.edu
-ping -4 -c 1 -w 5 -q uva.edu
-ping -4 -c 1 -w 5 -q virginia.edu
-ping -4 -c 1 -w 5 -q www.virginia.edu
-ping -4 -c 1 -w 5 -q archive.org
-ping -4 -c 1 -w 5 -q apnews.com
-ping -4 -c 1 -w 5 -q example.com
-ping -4 -c 1 -w 5 -q wikipedia.org
-ping -4 -c 1 -w 5 -q 1.1.1.1
-ping -4 -c 1 -w 5 -q 8.8.8.8
-ping -4 -c 1 -w 5 -q 4.2.2.2
-ping -4 -c 1 -w 5 -q umd.edu
-ping -4 -c 1 -w 5 -q verisign.com
-ping -4 -c 1 -w 5 -q cloudflare.com
-nslookup cloudflare.co
-ping -4 -c 1 -w 5 -q apod.nasa.gov
-ping -4 -c 1 -w 5 -q cbc.ca
-ping -4 -c 1 -w 5 -q loc.gov
-ping -4 -c 1 -w 5 -q debian.org
-ping -4 -c 1 -w 5 -q ubuntu.org
-ping -4 -c 1 -w 5 -q microsoft.com
-ping -4 -c 1 -w 5 -q azure.microsoft.com
-ping wvu.edu
-ping -4 -c 1 -w 5 -q unc.edu
-ping nr.edu
-ping www.nr.edu
-ping -4 -c 1 -w 5 -q unc.edu
-ping -4 -c 1 -w 5 -q netflix.com
-ping -4 -c 1 -w 5 -q youtu.be
-ping -4 -c 1 -w 5 -q signal.org
-ping -4 -c 1 -w 5 -q telegram.org
-ping -4 -c 1 -w 5 -q akamai.com
-ping -4 -c 1 -w 5 -q aliexpress.com
-ping -4 -c 1 -w 5 -q utk.edu
-ping -4 -c 1 -w 5 -q cern.eu
-ping -4 -c 1 -w 5 -q spotify.com
-ping -4 -c 1 -w 5 -q discord.com
-ping -4 -c 1 -w 5 -q imgur.com
-ping -4 -c 1 -w 5 -q stackexchange.com
-ping -4 -c 1 -w 5 -q nrao.edu
-ping -4 -c 1 -w 5 -q 
-ping -4 -c 1 -w 5 -q dlmf.nist.gov
-ping -4 -c 1 -w 5 -q osha.gov
-ping -4 -c 1 -w 5 -q arxiv.org
-ping -4 -c 1 -w 5 -q gatech.edu
-ping -4 -c 1 -w 5 -q swvgs.us
-ping -4 -c 1 -w 5 -q ntp.org
-isnetup
-echo "text" |tee testfile
-ls
-less testfile 
-rm testfile 
-man tee
-isnetup 
-vi bin/isnetup 
-ls bin/
-less bin/pinglog 
-vi .config/conky/conky.conf 
-less bin/pinglog 
-<bin/pinglog awk '{print $2;}'
-<bin/pinglog awk '{print $2;}'|sort
-<bin/pinglog awk '{print $2;}'|sort|uniq -c
-<bin/pinglog awk '{print $2;}'|sort|uniq -c |sort -nr
-<bin/pinglog awk '{print $2;}'|sort|uniq -c |sort -nr|less
-vi bin/weather
-weather
-vi bin/weather
-weather
-vi bin/weather
-weather
-ls -a
-ls
-mv COLORADO\ 4WD\ -\ Brake\ caliper\ mounting_front\ \&\ knuckle\ * Documents/
-rm signal-desktop-keyring.gpg 
-ls
-mv 89078.png\ \(PNG\ Image\,\ 2999 × 3188\ pixels\)\ —\ Scaled\ \(28%\).pdf Documents/
-ls
-weather
-vi bin/weather
-killall pan
-<bin/pinglog awk '{print $2;}'|sort|uniq -c |sort -nr|less
-weather
-vi bin/weather
-weather
-vi bin/weather
-weather
-vi bin/weather
-weather
-vi bin/weather
-wc -l .weather 
-fg
-wc -l .weather 
-weather
-man scrot 
-scrot -s
-ls
-feh 2022-06-06-042432_780x843_scrot.png 
-rm 2022-06-06-042432_780x843_scrot.png 
-scrot -s;feh 2*
-rm 2022-06-06-04*
-<bin/pinglog awk '{print $2;}'|sort|uniq -c |sort -nr|less
+exit
+sudo pip3 install vpython
+sudo aptitude install python3-vpython
+vim .config/openbox/rc.xml 
+jiggle 
+gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
+sudo gparted
+sudo aptitude install kicad
+sudo aptitude install idle3]
+sudo aptitude install idle3
+idle
+man fdupes
+fdupes -r
+fdupes -r .
+vim .config/openbox/rc.xml 
+sudo aptitude install xkbset 
+DDDDDDDddddddddd
+vim .config/openbox/rc.xml 
+vim .config/openbox/autostart 
+xset q | grep Caps
+xset q 
+openbox --restart
+xdotool key Caps_Lock
+ddddddDDDDDDDDDDdddddDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+ssssssSSSSSSSsssssssss
+setxkbmap -option caps:none
+setxkbmap -keycodes
+setxkbmap -print
+setxkbmap -option caps:escape
+setxkbmap -print
+setxkbmap -option 
+setxkbmap -option caps:escape
+setxkbmap -print
+vim .config/openbox/autostart 
 killall conky
-killall conky -9
-conky -d
-killall conky -9
-killall pan
-killall pan -9
-conky -d
-killall openbox
-xrandr -q
-xrandr :1
-xrandr :0
-killall openbox
-gnome-control-center 
-ls bin
-history | grep --bg
-history | grep '--bg
-history | grep "--bg
-history | grep \-\-bg
-grep bg
-history | grep bg
+vim .config/openbox/autostart 
+vim .config/openbox/menu.xml 
+vim .config/openbox/conky-reset 
+sudo synaptic
+ncdu
+xev
+ls
+setxkbmap -print
+vim .config/openbox/conky-reset 
+vim .config/openbox/autostart 
+setxkbmap -print
+setxkbmap -option caps:escape
+vim .config/openbox/autostart 
+setxkbmap -option caps:escape
+chmod 744 ./ip-keymap 
+inputplug -d -c ./ip-keymap 
+man inputplug 
+inputplug -d -c /bin/echo
+cd .config/openbox/
+ls
+touch keymap
+ls
+chmod 744 keymap
+ls
+vim keymap 
+ls
+./keymap 
+./keymap &
+fg
+vim keymap 
+./keymap 
+cp keymap ip-keymap
+vim ip-keymap 
+sudo aptitude install inputplug 
+man inputplug
+inplutplug -d
+inputplug -
+man inputplug
+inplutplug -d -c /bin/echo
+inputplug -d -c /bin/echo
+vi .config/openbox/autostart 
+setxkbmap -option escape:compose
+setxkbmap -option 
+setxkbmap -option capslock:escape
+setxkbmap -option capslock:esc
+cat .config/openbox/keymap 
+setxkbmap -print
+grep "compose:" /usr/share/X11/xkb/rules/base.lst
+setxkbmap -option capslock:compo
+setxkbmap -option caps:compose
+setxkbmap -print
+setxkbmap -option caps:compose
+setxkbmap -print
+grep "compose:" /usr/share/X11/xkb/rules/base.lst
+cat .config/openbox/keymap 
+setxkbmap -option rwin:compose
+setxkbmap -print
+setxkbmap -option compose:rwin
+setxkbmap -option compose:escape
+touch ©
+ls
+rm ©
+ls
+¬
+setxkbmap -option compose:rwin
+vim .config/openbox/ip-keymap 
+setxkbmap -option compose:rwin
+setxkbmap -print
+alias composekey='setxkbmap -option compose:rwin'
+composekey
+setxkbmap -option
+composekey
+setxkbmap -option
+setxkbmap -option caps:escape
+setxkbmap -option compose:rwin -option caps:escape
+setxkbmap -p
+setxkbmap -print
+vi .config/openbox/autostart 
+vi .config/openbox/ip-keymap 
+OpenSCAD 
+xev
+setxkbmap insert:`
+
+setxkbmap -option insert:`
+
+
+xev
+setxkbmap -option Insert=`
+`
+xev
+setxkbmap -option Insert=\`
+xev
+unrar
+sudo aptitude install unrar
+unrar 
+unrar |less
+unrar e AJAZZ_\ AK680\ single-mode\ mixed\ light\ version_\ Keyboard\ driver_\ V1.0.3.2.rar 
+cd /media/fraziema/3D4E396202FEF08F/
+ncdu
+cd ~
+xev
+feh .
 man feh
-vi bin/wall
-vi .bash_aliases 
+ls
+feh large/
+rm * -r
+exit
+pipx install qmk
 bash
-wall Pictures/Wallpapers/1273732574166.jpg 
-wall Pictures/Wallpapers/102454-2560x1600.jpg 
-cd .local/share/applications/
-ls
-vi userapp-feh-W3XTM1.desktop 
-if [ "ping -4 -c 1 -w 5 -q" ]; then echo "y"; else echo "n"; fi
-ping -4 -c 1 -w 5 -q
-if [ "ping -4 -c 1 -w 5 -q google.com" ]; then echo "y"; else echo "n"; fi
-ping -4 -c 1 -w 5 -q google.com
-rm bin/pinglog 
-isnetup 
-history 
-`history|grep pingl`
-<bin/pinglog awk '{print $2;}'|sort|uniq -c |sort -nr|less
-vi bin/isnetup 
-isnetup 
-vi bin/isnetup 
-isnetup 
-vi bin/isnetup 
-isnetup 
-vi bin/isnetup 
-isnetup 
-vi bin/isnetup 
-isnetup 
-vi bin/isnetup 
-isnetup 
-fg
-isnetup 
-fg
-isnetup 
-fg
-isnetup 
-ping 1.1.1.1
-isnetup 
-fg
-isnetup 
-vi bin/Meaning_of_Liff_edited.txt 
-vi .config/openbox/autostart 
-man xscreensaver
-fg
-ebook-convert Arnold\ Robbins\ -\ VI\ Editor\ Pocket\ Reference-O\'Reilly\ Media\ \(1998\).epub vi-pocket-ref.pdf
-ebook-convert *Prac* practical-vim.pdf
-vim phosts 
-killall vim
-vim phosts 
-sudo aptitude install pandoc
-ls
-pandoc
-sudo aptitude install pandoc
-man pandoc
-sudo aptitude install calibre
-sudo aptitude install ebook-t
-man which ebook2epub
-which ebook2epub
-ebook2epub "O'Reilly - sed and awk Pocket Reference, 2nd Edition.mobi" 
-ebook2epub "O'Reilly - sed and awk Pocket Reference, 2nd Edition.mobi" sed-awk.epub
-man ebook2epub
-ebook2epub -h
-ebook2epub "O'Reilly - sed and awk Pocket Reference, 2nd Edition.m*" sed-awk.epub
-sudo aptitude install calibre
-ls *sed*.mobi
-ls "*sed*.mobi"
-ebook-convert *sed*.mobi sed-awk.pdf
-ls C*
-ebook-convert C* c-reference.pdf
-ebook-convert H* html-reference.pdf
-ebook-convert L* vi-reference.pdf
-sudo aptitude install pm-utils
-/usr/sbin/pm-hibernate 
-sudo /usr/sbin/pm-hibernate 
-sudo aptitude install acpiutils
-sudo halt
-./.fehbg 
-fbpanel 
-fbpanel &
-kill 1
-kill 2375
-man nohup
-nohup fbpanel & >/dev/null
-ls
-rm nohup.out 
-ls
-kill 2427
-nohup fbpanel >/dev/null &
-ls
-gnome-control-center 
-sudo gnome-control-center 
-htop
+pipx install argcomplete colorama dotty-dict hid hjson jsonschema>=4 milc>=1.4.2 pygments pyserial pyusb pillow
+sudo gparted 
+f3probe /dev/sdc1
+f3probe /dev/sdc
+man f3fix
+f3fix --last-sec=134217727 --fs-type=exfat
+f3fix -s
+f3fix --last-sec=134217727 --fs-type=fat32 /dev/sdc
+pipx install -r ~/.qmk_firmware/requirements.txt 
+pipx install ~/.qmk_firmware/requirements.txt 
+less .qmk_firmware/requirements.txt 
+pipx install argcomplete colorama dotty-dict hid hjson jsonschema>=4 milc>=1.4.2 pygments     pyserial pyusb pillow
+pipx install
+pipx install package_spec
+pipx ensurepath
+pipx ensurepath --force
+bash
+fafix -h
+f3fix -h
+f3fix --help
+setxkbmap -print
+alias
+./.config/openbox/keymap 
+xev
+setxkbmap -print
+cp .config/openbox/keymap ./bin/
+cp .config/openbox/ip-keymap ./bin/
+cp .config/openbox/conky-reset ./bin/
+cat bin/conky-reset 
+cat bin/ip-keymap 
 cat .config/openbox/autostart 
-vi .config/openbox/autostart 
-killall openbox
-vi .config/openbox/autostart 
 exit
-echo $XDG_CONFIG_DIRS
-ls $XDG_CONFIG_DIRS
-openbox-menu -o ~/.config/openbox/applications.menu -g -x
-ls
-ls .config/openbox/
-less .config/openbox/applications.menu 
-less .config/openbox/lxde-rc.xml 
-man openbox-menu
-openbox-menu -h
-less .config/openbox/applications.menu 
-openbox-menu -o .config/openbox/applications.menu -g -x
-openbox-menu -o ~/.config/openbox/applications.menu -g -x
-echo $XDG_CONFIG_DIRS
-env
-man set
-openbox-menu -o ~/.config/openbox/applications.menu -g -x
-sudo aptitude install menu
-update-menus 
-openbox-menu -o ~/.config/openbox/applications.menu -g -x
-less .config/openbox/applications.menu 
-echo $XDG_CONFIG_DIRS
-export XDG_CONFIG_DIRS=~/.config/
-openbox-menu -o ~/.config/openbox/applications.menu -g -x
-export XDG_CONFIG_DIRS=~/.config/openbox/
-openbox-menu -o ~/.config/openbox/applications.menu -g -x
-bash
-openbox-menu -o ~/.config/openbox/applications.menu -g -x
-man update-menus 
-export XDG_CONFIG_DIRS="$HOME/.config:/etc/xdg
-"
-openbox-menu -o ~/.config/openbox/applications.menu -g -x ma
-openbox-menu -o ~/.config/openbox/applications.menu -g -x 
-ls .config/
-ls .config/gnome-session/
-ls .config/xfce4/
-ls .config/xfce4/xfconf/
-ls .config/xfce4/xfwm4/
-cd $XDG_CONFIG_DIRS
-export XDG_CONFIG_DIRS="$HOME/.config"
-cd $XDG_CONFIG_DIRS
-cd openbox/
-ls
-openbox-menu -o ~/.config/openbox/debian-menu.xml 
-cd $XDG_CONFIG_DIRSenbox/
-export XDG_CONFIG_DIRS="$HOME/.config/openbox"
-cd $XDG_CONFIG_DIRS
-openbox-menu -o ~/.config/openbox/debian-menu.xml 
-openbox-menu ~/.config/openbox/debian-menu.xml 
-openbox-menu debian-menu.xml 
-openbox-menu 
-xdg-desktop-menu 
-man xdg-desktop-menu 
-ls
-less .config/fbpanel/default 
+qmk list-keyboards
+qmk list-keyboards|grep keychron
+qmk list-keyboards|grep keychron | less
+qmk list-keyboards|grep c3-pro
+qmk list-keyboards|grep c3pro
+qmk list-keyboards|grep key
+qmk list-keyboards|grep keychron/c3
+qmk compile keychron/c3_pro/ansi/rgb
+qmk compile -kb keychron/c3_pro/ansi/rgb
+qmk compile -kb keychron/c3_pro/ansi/rgb -km default
+vom
 vim
+exit
+smassh
+sudo synapyic
+sudo synaptic
+pipx install solidpython
+pip install git+https://github.com/SolidCode/SolidPython.git
+pipx install git+https://github.com/SolidCode/SolidPython.git
+f3write /dev/sdc
+f3write /dev/sdc1 
+man f3write
+f3write .
+touch jklhjklhk
+ls
+xev
+ip-keymap 
+cat bin/ip-keymap 
+keymap 
+smassh
+xev
+qmk config user.keyboard=keychron/c3_pro/ansi/rgb
+qmk config user.keymap=fraziema
+qmk new keymap
+qmk new-keymap
+rm .qmk_firmware/
+rm .qmk_firmware/ -r
+rm .qmk_firmware/ -rf
+pipx install qmk
+pipx install qmk --force
+ls .*
+ls .* | less
+pipx remove qmk
+pipx uninstall-all qmk
+pipx uninstall qmk
+history | grep .qmk
+history | grep pipx | less
+history | less
+pipx install qmk
+history | grep firmware
+qmk setup -H ~/.qmkfirm
+qmk compile -kb keychron/c3_pro/ansi/rgb -km default
+qmk config user.keyboard=keychron/c3_pro/ansi/rgb
+qmk config user.keymap=fraziema
+qmk new-keymap
+cd .qmkfirm/keyboards/keychron/c3_pro/ansi/rgb/keymaps/fraziema/
+ls
+vim keymap.c 
+libreoffice 
+cd ~
+pipx install smash
+pipx remove smash
+pipx uninstall smash
+pipx install smassh
+smassh
+openbox 
+sudo reboot
+hkjhkjhiuyuiyiuyiuykjhkjhkjhkjhjkhkjhuiyuiytiutiyiuyuihkjghgjhghjkgjkhfdsfdsdsadsfsgdsfdsfdsfdsfdsfdsfdsdfsfdsfdsxcvzxvcxcvxvvb,mb,mnm,n,mn.,m/.,.,./,[p]0=-0=-0=-0=-0hkjhgkjhkjhkjyiuyiuyiuyuiyiuyiuyiuy89798798798798yiuhkjbnm,bmnbmndfsfdsdfsfdsgjhgkhkjh;ll'
+;l;
+';
+\[A
+smassh
+history
+exit
+ls
+ls -
+cat -
+cat \-
+cat "-"
+vim "-"
+ls ./-
+less ./-
+rm ./-
+ls
+exit
+vim
+jiggle
+xev
+[200~sudo apt-get update
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install software-properties-common
+sudo apt-add-repository contrib
+sudo apt-get install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
+sudo apt-get install regionset
+sudo apt-get install libavcodec-extra
+jiggle
+lsblk
+sudo dmesg
+sudo gparted
+sudo killall gpartedbin
+sudo killall gpartedbin -9
+sudo gparted
+sudo dmesg
+ps -a | grep input
+ps -aux | grep input
+man inputplug 
+vi .config/openbox/autostart 
+xev
+python
+python3
+xev
+cd .config/openbox/
+ls
+vim autostart 
+ps -aux | grep input
+killall inputplug 
+sudo reboot
+ps -aux | grep input
+xev
+xbindkeys --key
+sudo aptitude install xbindkeys
+xbindkeys --key
+xbindkeys --defaults > /home/fraziema/.xbindkeysrc
+setxkbmap -option
+ps -aux | grep input
+cd .config/openbox/
+vim autostart 
+sudo reboot
+xev
+vimtutor 
+exit
+setxkbmap 
+setxkbmap -h
+setxkbmap --help
+man setxkbmap
+setxkbmap -keycodes
+setxkbmap --keycodes
+history | grep setxk
+history | grep setxk | less
+setxkbmap --keycodes
+setxkbmap -keycodes
+setxkbmap caps:ctrl_modifier
+setxkbmap -option caps:ctrl_modifier
+smassh
+vim
+tmux source-file ~/.tmux.conf
+vim .tmux.conf 
+tmux source-file ~/.tmux.conf
+xev
+smassh
+exit
+xcape -t -e Control_L=Escape
+xcape -d -t -e 'Control_L=Escape'
+xcape -d -t -e 'Control_L=Escape;'
+xcape -e 'Shift_L=Escape;Control_L=Control_L|O' -d
+xcape -e 'Shift_L=Escape;Control_L=Control_L|O' -d -t
+xcape -e 'Shift_L=Escape;Control_L=Control_L|O' -d 
+xcape -e 'Control_L=Escape' -d 
+htop
+xcape -e 'Control_L=Escape' 
+ls -a
+find tmux.conf
+vim .tmux.conf
+tmux
+exit
+tmux source-file ~/.tmux.conf
+\n
 clear
-convert .2 2.png
-feh 2.png 
-mogrify -scale 64x64 2.png ; feh 2.png 
-convert .foo foo.png
-mogrify -scale 64x64 foo.png ; feh foo.png 
-youtube-dl 
-youtube-dl -- help
-youtube-dl --help
-ls bin
-alias
-cd Desktop/
-ytmp3 https://www.youtube.com/watch?v=NTA7Qg6H92g
-screen -r
-xterm -h
-xterm -h|less
-rxvt
-man xrandr
-xrandr
-man xrandr
-xrandr
-xrandr --output VGA-1 --mode 1680x1050
-xrandr --output VGA-1 --mode 1440x900
-crandr
-xrandr
-xrandr --output VGA-1 --mode 1680x1050
-startx
+xev
+vim .config/openbox/autostart 
+openbox -restart
+openbox --restart
+ps -aux | grep xcape
 exit
-rm .config/autostart/lxrandr-autostart.desktop 
-ls .config/autostart/
-less .config/autostart/lxrandr-autostart.desktop 
-less .xsession-errors
-vi .Xresources 
-xrdb .Xresources 
-less .xsession-errors
-xterm
-xrdb .Xresources 
-vi .Xresources 
-xterm
-xrdb .Xresources 
-xterm
-vi .Xresources 
-xrdb .Xresources 
-xterm
-vi .Xresources 
-fg
-xrdb .Xresources 
-xterm
-fg
-screen -r
-exit
-vi .config/openbox/autostart 
-openbox restart
-xrandr
-sudo reboot
-systemd-analyze blame
-systemd-analyze blame poettering
-less .xsession-errors
-locate openbox-xdg-autostart
-cat `locate openbox-xdg-autostart`
-less `locate openbox-xdg-autostart`
-less `lo e openbox-xdg-autostart`
-sudo apt install haveged
-echo $XDG_SESSION_PATH 
-xrandr
-sudo journalctl -b
-sudo aptitude remove gnome-session
-sudo aptitude update && sudo aptitude upgrade 
-vi .config/openbox/autostart 
-vi .config/autostart 
-ls .config/
-less .config/monitors.xml
-exit
-systemd-analyze blame
-rm .config/autostart/lxrandr-autostart.desktop 
-man haveged 
-haveged
-sudo aptitude remove tracker
-sudo reboot
-exit
-sudo aptitude update && sudo aptitude upgrade 
-sudo aptitude search 256
-rxvt-xterm 
-rxvt-unicode 
-rxvt
-vi .Xresources 
-xrdb .Xresources 
-vi .Xresources 
-xrdb .Xresources 
-vi .Xresources 
-xrdb .Xresources 
-rxvt
-vi .Xresources 
-xrdb .Xresources 
-xterm
-vi .Xresources 
-fg
-xrdb .Xresources 
-xterm
-fg
-man xterm
-xterm -h
-xterm -h|less
-exit
-update-menus 
-vim .vimrc 
-exit
-mv N2UyYjk3OTgK.jpg test-icar.jpg
-man convert
-convert test-icar.jpg -edge test-icar-edge.jpg 
-convert test-icar.jpg -edge 1 test-icar-edge.jpg 
-for i in `seq 1 5`; do convert test-icar.jpg -edge $i test-icar-edge-$i.jpg; done 
-feh test-icar*
-for i in `seq 1 5`; do convert DiamondMoonWSMALL.jpg -edge $i DiamondMoonWSMALL-edge-$i.jpg; done 
-fraziema@desktop:~$ 
-env TERM=xterm-256color /bin/bash
-vim .bashrc
-vim
-vim .bashrc
-for i in `seq 1 5`; do convert 1982detroitgp.jpeg -edge $i 1982detroitgp.jpeg-edge-$i.jpg; done 
-man seq
-for i in `seq 0.5 0.5 5`; do convert 1982detroitgp.jpeg -edge $i 1982detroitgp.jpeg-edge-$i.jpg; done 
-for i in `seq 0.5 0.25 5`; do convert 1982detroitgp.jpeg -edge $i 1982detroitgp.jpeg-edge-$i.jpg; done 
-for i in `seq 1 15`; do convert 1982detroitgp.jpeg -edge $i 1982detroitgp.jpeg-edge-$i.jpg; done 
-for i in `seq 1 15`; do convert 1995start.jpeg -edge $i 1995start-edge-$i.jpg; done 
-vi edge-pic
-chmod 755 edge-pic 
-vi edge-pic
-./edge-pic 800px-Darlington-closest-finish.jpg 
-./edge-pic 800px-Darlington-closest-finish.jpg 5
-vi edge-pic 
-./edge-pic 800px-Darlington-closest-finish.jpg 
-./edge-pic BgcEoyQCYAAUPJ1.jpg 
-cd Pictures/imageedit/
-convert xc:White xc:Black -append map.png
-feh map.png 
-convert 1982detroitgp.jpeg -modulate 100,0,100 +level 30%%,90%%  -remap map.png 1982hedcut.jpg
+man tmux
+xcape -e 'Caps_Lock=Escape' -d
+xcape -e 'Control_L=Escape;Caps_Lock=Escape' -t 100
+man conky
+conky -o
+killall conky
+conky -o
+killall conky
+man conky
+conky
+man conky
+killall conky
+conky -o -d
+killall conky
+cd .config/openbox/
 ls
-feh 1982hedcut.jpg 
-vi hedcut
+cd .../
+cd ..
 ls
-chmod 755 hedcut 
-./hedcut test-icar.jpg 
-fg
-./hedcut test-icar.jpg 
-fg
-./hedcut test-icar.jpg 
-feh test-icar.jpg-hedcut.png 
-fg
-./hedcut test-icar.jpg 
-fg
-./hedcut test-icar.jpg 
-feh test-icar.jpg-hedcut.png 
-rm test-icar.jpg-hedcut.png 
+cd conky/
 ls
-rm test-icar.jpg.png 
-ls
-fg
-ls
-./hedcut test-icar.jpg 
-ls
-fg
-./hedcut test-icar.jpg 
-fg
-./hedcut test-icar.jpg 
-fg
-./hedcut test-icar.jpg 
-feh test-icar-hedcut.png 
-./hedcut 1982detroitgp.jpeg
-feh 1982detroitgp-hedcut.png 
-fg
-vim hedcut 
-ls
-hedcut 800px-Darlington-closest-finish.jpg
-./hedcut 800px-Darlington-closest-finish.jpg
-feh 800px-Darlington-closest-finish-hedcut.png 
-less hedcut 
-vi hedcut 
-./hedcut 800px-Darlington-closest-finish.jpg
-feh 800px-Darlington-closest-finish-hedcut.png 
-vi hedcut 
-./hedcut 800px-Darlington-closest-finish.jpg
-feh 800px-Darlington-closest-finish-hedcut.png 
-convert -solarize 1982detroitgp.jpeg
-convert -solarize 1 1982detroitgp.jpeg sol.jpg
-feh sol.jpg 
-convert -solarize 1 1982hedcut.jpg sol.jpg
-feh sol.jpg 
-rm sol.jpg 
-convert -solarize 0.5 1982detroitgp.jpeg sol.jpg
-feh sol.jpg 
-cd Pictures/imageedit/
-convert -solarize 0.5 800px-Darlington-closest-finish-hedcut.png. sol.png
-ls
-convert -solarize 0.5 800px-Darlington-closest-finish-hedcut.png sol.png
-feh sol.png 
-convert -solarize 5 800px-Darlington-closest-finish-hedcut.png sol.png
-feh sol.png 
-rm sol.png 
-less hedcut 
-vi edge-pic 
-./edge-pic 04.jpg 
-./edge-pic 10.jpg 
-cp edge-pic edge-sol
-vi edge-sol 
-./edge-sol 04.jpg 
-./edge-sol 10.jpg 
-which convert
-man convert
-convert -sketch 10.jpg 
-convert -sketch 1 10.jpg 
-ls
-convert -sketch 1 10.jpg 10s.jpg
-feh 10s.jpg 
-convert -sketch 10 10.jpg 10s.jpg
-feh 10s.jpg 
-convert -colorize 1 10.jpg 10s.jpg 
-feh 10s.jpg 
-convert -colorize 10 10.jpg 10s.jpg 
-feh 10s.jpg 
-convert -colorize 100 10.jpg 10s.jpg 
-feh 10s.jpg 
-convert -colorize 50 10.jpg 10s.jpg 
-feh 10s.jpg 
-convert -colorize 20 10.jpg 10s.jpg 
-feh 10s.jpg 
-convert -colorize 20,20,20 10.jpg 10s.jpg 
-feh 10s.jpg 
-convert -colorize 80,80,80 10.jpg 10s.jpg 
-feh 10s.jpg 
-vi hedcut 
-./hedcut 04.jpg 
-ls
-feh mon-hed-04.jpg 
-rm mon-hed-04.jpg 
-vi hedcut 
-./edge-pic 04.jpg 9
-feh mon-edge-04.jpg 
-rm 10-ed*
-rm 10s.jpg 
-ls
-rm *edsol*
-ls
-./edge-pic 04.jpg 9
-feh mon-edge-04.jpg 
-man montage
-montage 04-edge-* -geometry 1600x1200 -annotate %f mon.jpg
-man montage
-vi edge-pic 
-la
-ls
-rm mon-edge-04.jpg 
-./edge-pic 04.jpg 
-rm mon-edge-04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-feh mon-edge-04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-feh mon-edge-04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-feh mon-edge-04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-feh mon-edge-04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-feh mon-edge-04.jpg 
-vi edge-pic 
-./edge-pic 04.jpg 
-feh mon-edge-04.jpg 
-vi edge-pic 
-chmod 755 demo
-ls
-demo 04-edge 800x600
-./demo 04-edge 800x600
-ls
-feh demo-04-edge.png 
-./demo 04-edge 
-feh demo-04-edge.png 
-rm demo*
-./demo 04-edge 
-vim demo
-chmod 755 demo 
-./demo 04-edge
-feh demo-04-edge.png 
-rm demo-04-edge.png 
-./edge-pic 10.jpg ; demo 10-edge; feh demo*
-./edge-pic 10.jpg ; ./demo 10-edge; feh demo*
-./edge-pic 1982detroitgp.jpg ; ./demo 1982; feh demo*
-./edge-pic 1982detroitgp.jpeg ; ./demo 1982; feh demo*
-ls
-rm *edge*.j*
-ls
-./edge-pic 1982detroitgp.jpeg ; ./demo 1982; feh demo*
-rm demo*.p*
-./edge-pic 1982detroitgp.jpeg ; ./demo 1982; feh demo*
-rm demo*.p*
-ls
-rm 1982detroitgp-*
-ls
-./edge-pic 800px-Darlington-closest-finish.jpg 2
-ls
-demo 800px-Darlington-closest-finish-*
-./demo 800px-Darlington-closest-finish-*
-./demo 800px-Darlington-closest-finish-* 800x600
-less demo 
-./demo 800px-Darlington-closest-finish-* 1200x800
-vi demo 
-./demo 800px-Darlington-closest-finish-
-feh demo*
-vi demo 
-./demo 800px-Darlington-closest-finish- 
-feh demo*
-rm demo-800px-Darlington-closest-finish-.png 
-./demo 800px-Darlington 
-feh demo*
-./demo 800px-Darlington 800x600
-feh demo*
-rm demo-800px-Darlington.png 
-./demo 800px-Darlington 800x600
-feh demo*
-rm demo-800px-Darlington.png 
-ls
-less ~/.fehbg 
-vi ~/.config/conky/conky.conf 
-xfce4-settings-manager 
-xfwm4-tweaks-settings 
-xfwm4-settings 
-sudo aptitude install compton
-fg
-man convert
-man montage
-killall picom
-picom &
-vi .config/conky/conky.conf 
-fg
-picom -b
-vi .config/conky/conky.conf 
-man picom
-killall picom
-picom -b -m 0.5
-picom -b -m 0.2
-killall picom
-picom -b -m 0.2
-killall picom
-vi .config/conky/conky.conf 
-picom -b 
-killall picom
-picom -b -m 0.7
-killall picom
-vi .config/conky/conky.conf 
-picom -b
-killall picom
-fg
-vi .vimrc
-mkdir -p $VIMCONFIG/pack/bundle/start
-echo $VIMCONFIG
-env VIMCONFIG="~/.vim"
-mkdir -p $VIMCONFIG/pack/bundle/start
-mkdir -p ~/.vim/pack/bundle/start
-cd .vim/pack/
-rm -r bundle/
-mkdir start
-mv start/ bundle/
-cd bundle/
-mkdir start
-cd start
-pushd
-pushd ~
-vi .vimrc
-fg
-man git clone
-popd
-git clone https://github.com/pineapplegiant/spaceduck
-sudo aptitude install git
-git clone https://github.com/pineapplegiant/spaceduck.git
-fg
-vi ~/.vimrc
-ls
-ls spaceduck/
-less spaceduck/README.md 
-git clone https://github.com/ayu-theme/ayu-vim.git
-vi ~/.vimrc
-git clone https://github.com/pineapplegiant/spaceduck.git
-ls
-ls ayu-vim/colors/
-ls ayu-vim/colors/ayu.vim 
-less ayu-vim/colors/ayu.vim 
-rm spaceduck/
-rm spaceduck/ -r
-rm spaceduck/ -rf
-git clone https://github.com/pineapplegiant/spaceduck.git
-ls ayu-vim/autoload/
-ls ayu-vim/autoload/airline/
-ls ayu-vim/autoload/airline/themes/
-ls ayu-vim/autoload/airline/themes/ayu.vim 
-less ayu-vim/autoload/airline/themes/ayu.vim 
-git clone https://github.com/pineapplegiant/spaceduck.git
-vim ~/.vimrc
-;s
-ls
-mv * ~/.vim/colors
-cd ~/.vim/colors/
-ls
-vim ~/.vimrc
-git clone https://github.com/morhetz/gruvbox.git
-vim ~/.vimrc
-ls
-fg
-rm gruvbox/ -rf
-git clone https://github.com/morhetz/gruvbox.git
-ls
-git clone https://github.com/morhetz/gruvbox.git
-fg
-vim ~/.vimrc
-pushd ../pack/bundle/start/
-mv ~/.vim/colors/gruvbox/ .
-ls
-vim ~/.vimrc
-fg
-popd
-git clone https://github.com/vim/colorschemes.git
-vim ~/.vimrc
-ls
-git clone https://github.com/sjl/badwolf.git
-vim ~/.vimrc
-ls
-mv badwolf/ ../pack/bundle/start/
-fg
-git clone https://github.com/fielding/vice.git &
-ls
-mv ../pack/bundle/start/badwolf/ .
-ls
-cd badwolf/
-ls
-cd ../spaceduck/
-ls
+vim conky.conf 
 cd ../
+ls autostart/
+im
+vim
+killall xcape
+xcape -e 'Control_L=Escape'
+vim
+killall xcape
+xev
+setxkbmap -print
+history
+history | grep /etc | less
+sudo cd /etc/default/
 ls
-cd badwolf/
+cd /etc/default/
 ls
-rm package.sh 
-ls contrib/
-rm contrib/
-rm contrib/ -rf
+sudoedit keyboard 
+udevadm trigger --subsystem-match=input --action=change
+sudo udevadm trigger --subsystem-match=input --action=change
+vim
+history | grep xcape
+xcape -e 'Control_L=Escape'
+vim
+killall xcape
+xcape -e 'Control_L=Escape' -t 150
+killall xcape
+xcape -e 'Control_L=Escape' -t 150 -d
+setxkbmap -print
+man xkeyboard-config
+xev
+killall xcape
+xcape -e 'Control_L=Escape' -t 150 -d
+man xcape
+xcape -e '66=Escape' -t 150 -d
+xcape -e '#66=Escape' -t 150 -d
+sudoedit keyboard 
+sudo udevadm trigger --subsystem-match=input --action=change
+xev
+xcape -e '#66=Escape' -t 150 
+killall xcape
+xcape -e '#66=Escape' -t 150 -d
+vim
+xcape -e '#66=Escape' -t 150 -d
+xcape -e '#66=Escape' -t 250 -d
+echo "xcape -e '#66=Escape' -t 250 -d
+">test
+echo "xcape -e '#66=Escape' -t 250 -d
+">~/test
+cd ~
+lks
 ls
-rm LICENSE.markdown README.markdown 
-ls
+echo "sudo udevadm trigger --subsystem-match=input --action=change"> ~/test
+cat test
+exit
+conky
+killall xcape
+xcape -e 'Control_L=Escape' -t 100 
+grep "caps" /usr/share/X11/xkb/rules/xorg.lst
+grep "caps" /usr/share/X11/xkb/rules/xorg.lst |less
+echo "grep "caps" /usr/share/X11/xkb/rules/xorg.lst |less 
+">~/test
+cat test
+exit
+which vim
+which vim
+source .bashrc
+
+which vim
+man bash
+vim .config/openbox/rc.xml 
+exit
+
+vim .bashrc
+echo $EDITOR
+vim .bashrc
+man find
+find / xorg.lst
+find /etc xorg.lst
+find / xorg.lst
+man find
+setxkbmap -option caps:ctrl_modifier 
+localectl list-x11-keymap-* 
+xev
+setxkbmap -option caps:ctrl_modifier 
+xev
+sudo dpkg-reconfigure keyboard-configuration
+setxkbmap -option caps:ctrl_modifier 
+sudo dpkg-reconfigure keyboard-configuration
+grep "caps" /usr/share/X11/xkb/rules/xorg.lst
+sudoedit /etc/default/keyboard 
+udevadm trigger --subsystem-match=input --action=change
+sudo udevadm trigger --subsystem-match=input --action=change
+ooooooooooooo
+aaaaaaaaaaaaaaaaaclear
+clear
+vim .tmux.conf 
 fg
-vim ~/.vimrc
-ls
-cd colors/
-ls
-mv * ../../
-cd ../../
-ls
-rm badwolf
-rm badwolf -r
-ls
-vim ~/.vimrc 
-mv badwolf.vim ../pack/bundle/start/
-vim ~/.vimrc 
-ls
-rm goodwolf.vim 
-rm ../pack/bundle/start/badwolf.vim 
-ls
-fg
-ls
-mv vice/ ../pack/bundle/start/
-fg
-rm colorschemes/
-rm colorschemes/ -rf
-vi .vimrc
-vi ~/.vimrc
-mv ../pack/bundle/start/vice/ .
-ls
-fg
-rm =rf vice/
-rm -rf vice/
-ls
-vi ~/.vimrc
-vim ~/.vimrc
-gvim ~/.vimrc
-vim ~/.vimrc
-git clone https://github.com/fielding/vice.git
-fg
-vim ~/.vimrc
-mv vice/ ../pack/bundle/start/
-fg
-git clone https://github.com/ghifarit53/tokyonight-vim.git
-fg
-s
-ls
-mv tokyonight-vim/ ../pack/bundle/start/
-fg
-pushd ~
-ls -a
-cd .ssh
-ls
-ssh-keygen -t rsa -b 4096
-cat id_rsa.pub 
-fg
-popd
-git clone https://github.com/fenetikm/falcon.git
-git clone https://github.com/noahfrederick/vim-noctu
-git clone https://github.com/dikiaap/minimalist
-git clone https://github.com/KabbAmine/yowish.vim
-git clone https://github.com/artanikin/vim-synthwave84
-fg
-ls
-mv vim-* ../pack/bundle/start/
-mv minimalist/ ../pack/bundle/start/
-mv yowish.vim/ ../pack/bundle/start/
-fg
-ls ../pack/bundle/start/
-rm ../pack/bundle/start/yowish.vim/ -rf
-fg
-git clone https://github.com/jsit/toast.vim
-fg
-mv toast.vim/ toast/
-ls toast/
-fg
-mv toast/ ../pack/bundle/start/
-mv ../pack/bundle/start/toast/ .
-fg
-mv toast/ ../pack/bundle/start/
-fg
-git clone https://github.com/nelstrom/vim-blackboard
-fg
-alias vv="vim ~/.vimrc"
-vv
-ls
-mv vim-blackboard/ blackboard/
-mv blackboard/ ../pack/bundle/start/
-vv
-git clone  https://github.com/GertjanReynaert/cobalt2-vim-theme
-mv cobalt2-vim-theme/ cobalt2/
-vv
-mv cobalt2/ ../pack/bundle/start/
-vv
-git clone https://github.com/larssmit/vim-getafe
-mv vim-getafe/ getafe/
-vv
-mv getafe/ ../pack/bundle/start/
-vv
-git clone https://vimcolorschemes.com/vim-scripts/twilight256.vim
-vv
-git clone https://github.com/ratazzi/blackboard.vim
-ls
-mv blackboard.vim/ blackboard/
-rm ../pack/bundle/start/blackboard/
-vv
-mv blackboard/ ../pack/bundle/start/
-rm ../pack/bundle/start/blackboard/ -rf
-vv
-mv blackboard/ ../pack/bundle/start/
-vv
-git clone https://github.com/jdsimcoe/hyper.vim
-vm hyper.vim/ hyper/
-ls
-mv hyper.vim/ hyper/
-ls
-vv
-mv hyper/ ../pack/bundle/start/
-vv
-git clone https://github.com/danilo-augusto/vim-afterglow
-vv
-ls
-mv vim-afterglow/ afterglow/
-mv afterglow/ ../pack/bundle/start/
-popd
-cd ../pack/bundle/start/
-ls
-nemo
-nemo .
-vv
-ls .vim/colors/
-mv .vim/pack/bundle/start/blackboard/ .
-cp blackboard/colors/blackboard.vim .vim/colors/
-mv blackboard/ Documents/vimcolors/
-mv .vim/pack/bundle/start/* .
-ls
-cp afterglow/colors/afterglow.vim ~/.vim/colors/
-cp cobalt2/colors/cobalt2.vim .vim/colors/
-cp getafe/colors/getafe.vim .vim/colors/
-cp gruvbox/colors/gruvbox.vim .vim/colors/
-mv gruvbox/ Documents/vimcolors/
-mv getafe/ Documents/vimcolors/
-mv cobalt2/ Documents/vimcolors/
-ls
-mv afterglow/ Documents/vimcolors/
-ls
-for i in {hyper,minimalist,toast,toky*,vice,vim*}; do ls $i; done
-for i in {hyper,minimalist,toast,toky*,vice,vim*}; do echo $i; ls $i; done
-for i in {hyper,minimalist,toast,toky*,vice,vim*}; do cp $i/colors/*.vim .vim/colors; done
-for i in {hyper,minimalist,toast,toky*,vice,vim*}; do mv $i Documents/vimcolors/; done
-ls
-ls Documents/vimcolors/
-less Documents/vimcolors/README.md 
-ls .vim/colors/
-rm .vim/colors/PaperColor.vim 
-cd vim
-cd .vim/
-ls
-cd colors/
-ls
-mv spaceduck ~/Documents/vimcolors/
-git clone https://github.com/mkarmona/colorsbox
-cp colorsbox/colors/colorsbox-* .
-mv colorsbox/ ~/Documents/vimcolors/
-ls
-cp falcon/colors/falcon.vim .
-mv falcon/ ~/Documents/vimcolors/
-alias doc="~/Documents/vimcolors/"
-doc
-ls doc
-unalias doc
-alias
-ls
-cp ayu-vim/colors/ayu.vim .
-mv ayu-vim/ ~/Documents/vimcolors/
-ls
-ls colorsbox-{f*,m*,stbr*,ste*,stn*}
-man mv
-mv colorsbox-{f*,m*,stbr*,ste*,stn*} ~/Documents/vimcolors/
-ls ~/Documents/vimcolors/
-ls
-vv
-vim .vimrc
-ls
-ls .vim/colors/
-rm .vim/colors/palenight.vim 
-fg
-rm .vim/colors/purify.vim 
-fg
-vim .vimrc
-ls
-echo $term
-echo $TERM
-ls
-:w
-:q
-lol
-dance
-chmod 755 bin/dance 
-dance
+vim .tmux.conf 
+man tmux
+setxkbmap -print
+setxkbmap -option
+setxkbmap -print
+setxkbmap -option 'ctrl:swapcaps'
+setxkbmap -option
+setxkbmap -option 'ctrl:swapcaps'
+setxkbmap -print
+setxkbmap -option
+setxkbmap -print
+smassh
+setxkbmap -option caps:lcontrol
+setxkbmap -option 
+cat .config/openbox/ip-keymap 
+cat .config/openbox/keymap 
+vim .config/openbox/rc.xml 
+tmux
+man tmox
+man tmux
+tmux attach
+tmux ls
+exit
+vim .config/conky/conky.conf 
+vimn
+vim
+xcape
+xev
 vim
 exit
-clear
-whoami
-gvim
+which x-terminal-emulator 
+x-terminal-emulator 
+set -o vi
+grep "caps" what 
 exit
-scp -r .vim* tilde.club:~/
 ls
 exit
-ssh tilde.club
 ls
-vim phosts 
-rm phosts 
-fg
+exit
+xrdb .Xresources 
 vim .vimrc
-exit
-killall picom
-ls -a bin
-history |grep ssh
-less .ssh/id_rsa.pub 
-ssh -T git@github.com
-less .ssh/known_hosts 
-ssh tilde.club
-exit
-git status
-ls
-git status
+vim .vim/colors/gruvbox.vim 
+ls .vim/colors/
+vim .vimrc
+ls .vim/colors/
+vim .vimrc
+:q
 exit
 ls
+exit
+ls
+exit
+xrdb .Xresources 
+exit
+dfjasdl;kfjlksda;lk;j;lkj;lkj;lkj;lkjfasdl;kjflk;dsaj:q
+ls
+exit
+ls
+exit
+ls
+exit
+ls
+exit
+set -o
+man set
+sudo aptitude install rxvt-unicode 
+rxvt
+rxvt-unicode 
+xterm
+vim .Xresources 
+urxvt
+urxvt --help
+urxvt --help|less
+xrdb .Xresources 
+urxvt
+man xrdb
+man rxvt
+vim .Xresources 
+xrdb .Xresources 
+vim .Xresources 
+xrdb .Xresources 
+urxvt 
+vim .Xresources 
+vim .bashrc
+ls .bash*
+less .bash_prompt_old 
+vim .bashrc
+urxvt
+cp .bash_prompt{_old,} 
+urxvt
+vim .Xresources 
+rm .bash_prompt
+exit
+urxvt
+man rxvt 
+urxvt -fn
+man rxvt 
+xrdb .Xresources 
+urxvt
+urxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=15"
+urxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=18"
+urxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=22"
+fc-list 
+fc-list |less
+fc-list | grep ucida
+urxvt
+xterm
 ls -a
-ls .dotfiles/
-ls .dotfiles/ -a
-vi .bashrc
-. .bashrc
-ll
-la
-:q
-vi .bash_aliases 
-. .bashrc
-:q
-ls -A
-ls -a
-ls -A
-ls -l
-ls -CF
-ls -CFA
-:q
-. .bashrc
-:q
-ls ~/.*
-ls ~/ -a
-:q
-. .bashrc
-:q
-ls .ssh
-ls
-la
-la .dotfiles/
-cp .profile .dotfiles/
-cp .gvimrc .dotfiles/
-la .*
-la *
-la 
-cat .viminfo 
-less .viminfo 
-ls .**
-ls .[a-z]*
-ls .*[a-z]*
-ls .
-ls -d .*
-rm .visidata/ -r
-ls -d .*
-ls -d .dotfiles/*
+mkdir .fonts
+fc-cache 
+urxvt -fn "xft:FantasqueSansMono-Regular:pixelsize=21:antialias=true"
+fc-cache 
+urxvt -fn "xft:Inconsolata-Regular:pixelsize=21:antialias=true"
+urxvt -fn "xft:Inconsolata-Regular"
+urxvt -fn "xft:Inconsolata-Regular:pixelsize=16"
+fc-cache 
+xrdb .Xresources 
+urxvt
+xrdb .Xresources 
+urxvt
+xrdb .Xresources 
+urxvt
+xrdb .Xresources 
+urxvt
+xrdb .Xresources 
+urxvt
+xrdb .Xresources 
+urxvt
 exit
+smassk
+smassh 
+:q
+wall nG7rHoih.jpeg 
+man wall
+alias
+vim ../.bash_aliases
+bash
+wallp nG7rHoih.jpeg 
+imgview nG7rHoih.jpeg 
+python
+python3
+exit
+tty-clock -c
+sudo aptitude install tty-clock 
+tty-clock -c
+gnome-control-center 
+htop
+xev
+killall xcape
+tmux
+vim .config/openbox/rc.xml 
+xcape -e 'Control_L=Escape' -t 100 
+htop
+less .config/openbox/autostart 
+xev
+sudo reboot
+killall xcape
+openbox --restart
+pgrep xcape
+man pgrep
+ps -aux | grep ca
+htop
+xcape -e 'Control_L=Escape' -t 150 
+xev
+exit
+xclock
+man xclock
+xclock -d
+xclock
+idle
+exit
+tty-clock -cs
+which tty-clock 
+sudo aptitude install  tty-clock 
+cd /bin
+ls
+cd ~/bin
+ls
+mv tty-clock tty-clock-old
+tty-clock
+tty-clock -cs
+exit
+conky
+conky
+date %d$M$y
+date +%d$M$y
+date +%d$m$y
+date
+date +%d%b%y
+date +%d%b%y 
+set -o vi
+date +%d%b%y 
+date +%d%b%y
+set -o -
+set -o vi
+set -o 
+set -o vi
+set -o 

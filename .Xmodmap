@@ -1,17 +1,21 @@
-! No Caps Lock
-clear lock
-! Caps Lock as Win key
-!add mod4 = Caps_Lock
-keycode 77 = Num_Lock
+keycode   9 = Escape NoSymbol Escape
+keycode  23 = Tab ISO_Left_Tab Tab ISO_Left_Tab
+keycode  37 = Control_L NoSymbol Control_L
+keycode  50 = Shift_L NoSymbol Shift_L
+keycode  62 = Shift_R NoSymbol Shift_R
+keycode  64 = Alt_L Meta_L Alt_L Meta_L
+!edited capslock (66) to control
+clear Lock
+clear control
+add control = Caps_Lock Control_L Control_R
+keycode  66 = Control_L NoSymbol Caps_Lock
 
-! Swap caps lock and escape
-remove Lock = Caps_Lock
-remove Control = Control_R
-
-keysym Control_R = Escape
-keysym Escape = Control_L
-keysym Caps_Lock = Escape
-
-add Lock = Caps_Lock
-add Control = Control_L
-add Control = Escape
+keycode  92 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
+keycode  93 =
+keycode  97 =
+keycode 105 = Control_R NoSymbol Control_R
+keycode 107 = Print Sys_Req Print Sys_Req
+keycode 127 = Pause Break Pause Break
+keycode 133 = Super_L NoSymbol Super_L
+keycode 134 = Super_R NoSymbol Super_R
+keycode 135 = Menu NoSymbol Menu

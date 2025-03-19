@@ -1,0 +1,31 @@
+#!/usr/bin/python
+"""
+Starting in the top left corner of a 22 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
+ 
+
+ How many such routes are there through a 2020 grid?
+ """
+
+list = []
+
+for i in range(21):
+    list.append([])
+    for j in range(21):
+        print i,j
+        if (i == 0):
+            list[i].append(1)
+        elif (j == 0):
+            list[i].append(1)
+        elif (i == 1):
+            list[i].append(j + 1)
+        elif (j == 1):
+            list[i].append(i + 1)
+        else:
+            list[i].append((2*list[i-1][j-1] + list[i-2][j] + list[i][j-2]))
+print list
+print list[20][20]
+"""
+This should be a combinatoric problem: there are 40 total steps, with two choices each; the solution should be
+40! / (20! * 20!)
+or for n x m grids, (N*M)!/(N!*M!)
+"""

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+shuf -n 1 ~/bin/Meaning_of_Liff_edited.txt |sed 's/.$//' | fmt -g 60

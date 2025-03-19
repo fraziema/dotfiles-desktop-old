@@ -1,0 +1,8 @@
+#!/usr/bin/python
+
+from modeuler import primes2
+
+x = primes2(100000000)
+
+for k in x: print k,
+

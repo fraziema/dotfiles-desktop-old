@@ -1,0 +1,13 @@
+#!/bin/bash
+#for a1 in * ; do
+		#sed -ne '/thumb/p' <$a1 | awk -F "=" '{print $2 }' | sed -e 's/\?se//g' -e 's/\"//g' -e 's/thumb/full/g' -ne '/https/p' >>list
+#done
+#mv  $a1 .$a1
+#awk '{ print "wget "$1" -O `printf \"%06d\" \$(ls | wc -l)`.jpg" ; printf "sleep 1\n"  }; ' <list >do
+#rm list 
+#. do
+#rm do
+#
+#mv  .$a1 $a1
+
+ gallery-dl -u cc065b0ff -p wookiee314 $1

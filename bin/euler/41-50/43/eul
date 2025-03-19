@@ -1,0 +1,44 @@
+#!/usr/bin/python
+
+from modeuler import digits
+def dupes(l): return (len(l) - len(set(l)))
+
+front = []
+back = []
+
+# first four digits only need divis. by 2 
+for x in range(1000,10000):
+    if dupes(digits(x)): continue
+    if not x % 2: front.append(x) 
+
+# last 5 digits, test divis later loop
+for z in range(1000,10000):
+    # sixth digit must be 0,5 -- this shortens outer loop by 5x
+    for y in range(0,100,5):
+        x = y*10000 + z 
+        if dupes(digits(x)): continue
+        back.append(x)
+
+end = []
+#these divis. only need back 5 digits
+for x in back:
+    if (x % 1000) % 17: continue
+    if ((x //10) % 1000) % 13: continue
+    if ((x //100) % 1000) % 11: continue
+    if ((x //1000) % 1000) % 7: continue
+    end.append(x)
+print end
+
+cand = []
+# concatenate halves, test for final div by 3
+for j in end:
+    for k in front:
+        a = k*(10**6)+j
+        if dupes(digits(a)):continue
+        if ((a //100000) % 1000) % 3: continue
+
+        cand.append(a)
+        print a
+print sum(cand)
+
+
